@@ -7,9 +7,10 @@ const Navbar = () => {
     const [menu, setMenu] = useState(false);
     const menuItems = <>
                     <Link className='menu-item' to='/'>Home</Link>
-                    <Link className='menu-item' >Appointments</Link>
+                    <Link className='menu-item' to='/appointment' >Appointments</Link>
                     <Link className='menu-item' >Services</Link>
                     <Link className='menu-item' >Contact</Link>
+                    <Link className='menu-item' >Login</Link>
                     </>
 
     const handleExpandMenu = () => {
@@ -20,7 +21,7 @@ const Navbar = () => {
     return (
         <nav>
             <div className='logo-container'>
-                <img className='logo' src="https://i.ibb.co/k8qL7Jf/logo.png" alt="" />
+                <Link to='/'><img className='logo' src="https://i.ibb.co/k8qL7Jf/logo.png" alt="" /></Link>
             </div>
             <div className='menu-container'>
                 {menuItems}
