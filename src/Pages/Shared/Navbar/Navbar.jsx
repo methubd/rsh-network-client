@@ -7,8 +7,12 @@ const Navbar = () => {
     const [menu, setMenu] = useState(false);
     const menuItems = <>
                     <Link className='menu-item' to='/'>Home</Link>
-                    <Link className='menu-item' to='/appointment' >Appointments</Link>
                     <Link className='menu-item' >Services</Link>
+                    <Link className='menu-item' to='/doctors'>Doctors</Link>
+                    <Link className='menu-item' >Departments</Link>
+                    <Link className='menu-item' >Pricing</Link>
+                    <Link className='menu-item' >Gallery</Link>
+                    <Link className='menu-item' >Blog</Link>
                     <Link className='menu-item' >Contact</Link>
                     <Link className='menu-item' >Login</Link>
                     </>
@@ -25,7 +29,6 @@ const Navbar = () => {
             </div>
             <div className='menu-container'>
                 {menuItems}
-                
             </div>
                 {/* Menu Toggle Btn */}
                 { menu ?

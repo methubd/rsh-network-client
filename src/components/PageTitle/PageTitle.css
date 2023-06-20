@@ -1,0 +1,31 @@
+.page-title-container{
+    background-image: url('https://www.pantai.com.my/assetsrevamp/public/images/pantai-nurse-background.webp?t=a');
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 15rem 10rem;
+    min-height: 100px; 
+}
+
+.sub-heading{
+    color: white;
+    background-color: var(--primary-color);
+    width: 25%;
+    padding: 5px 12px;
+    border-radius: 5px;
+}
+
+.heading{
+    color: var(--secondary-color);
+    font-size: 40px;
+}
+@media screen and (max-width: 992px) {
+    .page-title-container{
+        padding: 5rem 5rem;
+        min-height: 50px; 
+    }
+
+    .heading{
+        font-size: 22px;
+        width: 80%;
+    }
+}

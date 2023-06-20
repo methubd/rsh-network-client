@@ -1,6 +1,6 @@
 :root{
-    --primary-color: red;
-    --secondary-color: blue;
+    --primary-color: rgb(165, 2, 2);
+    --secondary-color: rgb(84, 8, 131);
     --description-color: rgb(112, 112, 112);
 }
 
@@ -11,3 +11,22 @@
 
 /* Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap');
+
+
+/* Some Utilities Btn */
+.btn-primary{
+    border: none;
+    color: white;
+    font-size: 14px;
+    border-radius: 5px;
+    padding: 8px 25px;
+    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
+    transition: 0.3s;
+}
+
+.btn-primary:hover{
+    background-color: var(--secondary-color);
+    background-color: var(--primary-color);
+    cursor: pointer;
+}

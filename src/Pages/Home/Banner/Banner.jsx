@@ -1,9 +1,12 @@
-import React from 'react';
+import PageTitle from "../../../components/PageTitle/PageTitle";
+
 
 const Banner = () => {
     return (
         <div>
-            <h1>Banner</h1>
+            <PageTitle
+            heading="RUSHMONO Specialized Hospital"
+            ></PageTitle>
         </div>
     );
 };
