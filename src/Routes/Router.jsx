@@ -1,7 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../Layouts/Main";
 import Home from "../Pages/Home/Home/Home";
-import MakeAppointment from "../Pages/MakeAppointment/MakeAppointment";
+
+import AllDoctors from "../Pages/AllDoctors/AllDoctors";
 
 const router = createBrowserRouter([
     {
@@ -14,7 +15,7 @@ const router = createBrowserRouter([
         },
         {
             path: '/doctors',
-            element: <MakeAppointment></MakeAppointment>
+            element: <AllDoctors></AllDoctors>
         }
       ]
     },

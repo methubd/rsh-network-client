@@ -1,13 +1,17 @@
 import Doctors from "../../components/Doctors/Doctors";
 import PageTitle from "../../components/PageTitle/PageTitle";
 
-const MakeAppointment = () => {
+const AllDoctors = () => {
+
+    const backGroundImage = 'https://www.pantai.com.my/assetsrevamp/public/images/pantai-nurse-background.webp?t=a';
+    
     return (
         <section>
             <div>
             <PageTitle
             subHeading="Meet our"
             heading="Qualified Doctors"
+            backGroundImage={backGroundImage}
             ></PageTitle>
             </div>
             
@@ -16,4 +20,4 @@ const MakeAppointment = () => {
     );
 };
 
-export default MakeAppointment;
+export default AllDoctors;

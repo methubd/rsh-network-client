@@ -1,7 +1,9 @@
 :root{
     --primary-color: rgb(165, 2, 2);
-    --secondary-color: rgb(84, 8, 131);
+    --secondary-color: rgb(73, 2, 127);
+    --third-color: rgb(34, 0, 255);
     --description-color: rgb(112, 112, 112);
+    --primary-width: 1280px;
 }
 
 *{
@@ -14,6 +16,15 @@
 
 
 /* Some Utilities Btn */
+.body-container{
+    background-color: rgb(254, 245, 236);
+}
+
+.container {
+    width: var(--primary-width);
+    margin: auto;
+}
+
 .btn-primary{
     border: none;
     color: white;
@@ -29,4 +40,10 @@
     background-color: var(--secondary-color);
     background-color: var(--primary-color);
     cursor: pointer;
+}
+
+@media screen and (max-width: 992px) {
+    :root{
+        --primary-width: fit;
+    }
 }
