@@ -10,7 +10,7 @@
 .sub-heading{
     color: white;
     background-color: var(--primary-color);
-    width: 25%;
+    width: fit-content;
     padding: 5px 12px;
     border-radius: 5px;
 }
@@ -34,5 +34,6 @@
 
     .sub-heading{
         font-size: 10px;
+        width: fit-content;
     }
 }

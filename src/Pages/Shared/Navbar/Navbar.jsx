@@ -2,9 +2,11 @@ import { Link } from 'react-router-dom';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid'
 import './Navbar.css'
 import { useState } from 'react';
+import useAuth from '../../../Hooks/useAuth';
 
 const Navbar = () => {
     const [menu, setMenu] = useState(false);
+    const {user, logOut} = useAuth();
     const menuItems = <>
                     <Link className='menu-item' to='/'>Home</Link>
                     <Link className='menu-item' >Services</Link>
@@ -14,12 +16,14 @@ const Navbar = () => {
                     <Link className='menu-item' >Gallery</Link>
                     <Link className='menu-item' >Blog</Link>
                     <Link className='menu-item' >Contact</Link>
-                    <Link className='menu-item' to='signin' >Sign In</Link>
+                    { user ?
+                        <button className='menu-item' onClick={logOut}>Sign out</button>
+                        :
+                        <Link className='menu-item' to='signin' >Sign In</Link>
+                    }
                     </>
 
     const handleExpandMenu = () => {
-        console.log('btn clicked');
-        console.log(menu);
         return menuItems;
     }
     return (
