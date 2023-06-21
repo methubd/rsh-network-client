@@ -1,0 +1,19 @@
+.contact-info-container{
+    padding: 25px 160px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.care-no{
+    font-size: 15px;
+    color: var(--description-color);
+}
+
+.care-line{
+    background-color: var(--description-color);
+    color: white;
+    padding: 0 5px;
+    margin: 0 2px;
+    border-radius: 5px;
+}

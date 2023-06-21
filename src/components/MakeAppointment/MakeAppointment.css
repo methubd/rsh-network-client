@@ -1,29 +1,67 @@
 .appointment-container{
     /* background: #edafaf; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+    gap: 0rem;    
+}
+
+.form-description-container{
+    color: var(--title-color);
+    padding: 0 40px;
+}
+
+.form-description-container p{
+    color: var(--description-color);
+    line-height: 25px;
+    margin-bottom: 50px;
+}
+
+.company-logo{
+    width: 120px;
+    padding: 20px 0;
+}
+
+.form-heading{
+    font-size: 40px;
+    padding-bottom: 20px;
     
 }
 
-.appointment-header{
-    text-align: center;
-}
-
 .appointment-body{
-    background: #ededed;
-    padding: 5rem;
+    border: 1px solid rgb(219, 219, 219);
+    background: #ffffff;
+    padding: 42px 42px;
     border-radius: 15px;
+    width: 22rem;
+    box-shadow: 0px 5px 10px 1px  #bfbfbf;
 }
 
-.joined-field{
-    display: flex;
-    gap: 1rem;
+.field-body{
+    padding-right: 18px;
 }
 
 .appointment-field{
-    border: none;
+    border: 1px solid rgb(214, 214, 214);
     outline: none;
+    border-radius: 10px;
     margin: 10px 0;
-    width: 100%;
-    font-size: 16px;
+    width: 95%;
+    font-size: 14px;
     padding: 10px 15px;
-    background-color: rgb(229, 229, 229);
+    background-color: rgb(255, 255, 255);
+}
+
+/* Medium Screen */
+@media screen and (max-width: 992px) {
+
+    .appointment-container{
+        flex-direction: column;   
+    }
+
+    .form-description-container{
+        
+    }
+
 }

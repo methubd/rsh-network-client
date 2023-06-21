@@ -14,7 +14,7 @@ const Navbar = () => {
                     <Link className='menu-item' >Gallery</Link>
                     <Link className='menu-item' >Blog</Link>
                     <Link className='menu-item' >Contact</Link>
-                    <Link className='menu-item' >Login</Link>
+                    <Link className='menu-item' to='signin' >Sign In</Link>
                     </>
 
     const handleExpandMenu = () => {
