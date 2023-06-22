@@ -3,11 +3,14 @@ import Banner from "../Banner/Banner";
 import Doctors from '../../../components/Doctors/Doctors';
 import MakeAppointment from '../../../components/MakeAppointment/MakeAppointment';
 import PremiumButtons from '../../../components/PremiumButtons/PremiumButtons';
+import { Helmet } from 'react-helmet';
+import SectionTitle from '../../../components/SectionTitle/SectionTitle';
 // import ContactInfo from '../../../components/ContactInfo/ContactInfo';
 
 const Home = () => {
     return (
         <section>
+            <Helmet title='Home | RSH'/>
             
             {/* <ContactInfo></ContactInfo> */}
             <Banner></Banner>
@@ -16,8 +19,11 @@ const Home = () => {
             {/* Consultants */}
 
             <div className='consultants-container'>
-                <h1 className='consultants-head'>Regular Consultants</h1>
-                <hr />
+                <SectionTitle 
+                heading="Our Consultants"
+                subHeading="Quality consultation server is our commitment"
+                />
+                
                 <Doctors></Doctors>
             </div>
 

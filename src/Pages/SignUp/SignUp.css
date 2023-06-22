@@ -2,9 +2,14 @@
     /* border: 1px solid; */
     width: 352px;
     margin: auto;
-    margin-top: 10rem;
+    /* margin-top: 10rem; */
     padding: 20px;
     /* background-color: antiquewhite; */
+}
+
+.signin-company-logo{
+    margin-bottom: 10rem;
+    text-align: center;
 }
 
 .signup-title-container{
@@ -51,8 +56,12 @@
 
 @media screen and (max-width: 576px) {
     .signup-container{
-        margin-top: 20px;
         padding: 0;
+    }
+
+    .signin-company-logo{
+        margin-bottom: 20px;
+
     }
 
     .signup-title{

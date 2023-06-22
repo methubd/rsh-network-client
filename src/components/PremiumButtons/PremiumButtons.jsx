@@ -1,4 +1,4 @@
-import { ChatBubbleBottomCenterIcon, DocumentCheckIcon, BuildingStorefrontIcon } from "@heroicons/react/24/solid";
+import { ChatBubbleBottomCenterIcon, DocumentCheckIcon, BuildingStorefrontIcon, HeartIcon } from "@heroicons/react/24/solid";
 import './PremiumButtons.css'
 
 
@@ -19,6 +19,11 @@ const PremiumButtons = () => {
 
                 <div className='single-btn-container'>
                     <button className='btn-premium-medicine'> <BuildingStorefrontIcon className='btn-icons'/>On Health Pharmacy</button>
+                    <p className='btn-description'>Order Medicine Anywhere from Dhaka City</p>
+                </div>
+
+                <div className='single-btn-container'>
+                    <button className='btn-premium-package'> <HeartIcon className='btn-icons'/>Senior Citizen <br /> Care</button>
                     <p className='btn-description'>Order Medicine Anywhere from Dhaka City</p>
                 </div>
 

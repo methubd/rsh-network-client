@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
-
+import { Toaster, toast } from "react-hot-toast";
 
 const SocialSignUp = () => {
     const {googleSignup} = useAuth();
@@ -25,6 +25,10 @@ const SocialSignUp = () => {
             if(loggedUser){
                 navigation('/')
             }
+
+            if(loggedUser){
+                toast.success('Successfully Sign in')
+            }
         })
         .catch(error => {
             console.log(error.message);
@@ -32,6 +36,7 @@ const SocialSignUp = () => {
     }
     return (
         <div className='social-login-container'>
+            <Toaster/>
             <button onClick={handleGoogleSignUp} className='btn-google-login'><img className='google-icon' src="https://i.ibb.co/5189tFN/7123025-logo-google-g-icon.png" alt="" /> Sign up with Google</button>
             <hr className='bottom-line' />
         </div>

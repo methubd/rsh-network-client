@@ -1,0 +1,37 @@
+.section-heading-container{
+    text-align: center;
+    margin-top: 8rem;
+    margin-bottom: 5rem;
+}
+
+.section-heading{
+    text-transform: uppercase;
+    background-color: var(--primary-color);
+    width: fit-content;
+    margin: auto;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 20px;
+    font-size: 32px;
+}
+
+.section-sub-heading{
+    color: var(--description-color);
+    font-size: 14px;
+    padding-top: 10px;
+}
+
+/* Medium Screen */
+@media screen and (max-width: 992px) {
+    .section-heading-container{
+        margin-top: 0rem;
+    }
+    
+    .section-heading{
+        text-align: center;
+        margin-top: 5rem;
+        font-size: 24px;
+        padding: fit-content;
+    }
+
+}

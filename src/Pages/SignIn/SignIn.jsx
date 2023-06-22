@@ -1,21 +1,42 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import SocialLogins from "../../components/SocialLogins/SocialLogins";
 import { Helmet } from "react-helmet";
+import useAuth from "../../Hooks/useAuth";
+import { Toaster, toast } from "react-hot-toast";
 
 
 const SignIn = () => {
+
+    const {signInWithPassword} = useAuth();
+    const navigate = useNavigate();
 
     const handleSignIn = event => {
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
-        const password = form.email.value;
+        const password = form.password.value;
         console.log(email, password);
+
+        signInWithPassword(email, password)
+        .then((result) => {
+            if(result.user){
+                toast.success('Successfully Sign in')
+            }
+            navigate('/')
+        })
+        .catch(error => console.log(error.message))
+
     }
 
     return (
         // https://app.tooljet.com/login?redirectTo=/
         <section className='signup-container'>
+            
+            <div className='signin-company-logo'>
+            <Link to='/'><img className='logo ' src="https://i.ibb.co/k8qL7Jf/logo.png" alt="" /></Link>
+            </div>
+
+            <Toaster/>
             <Helmet title='Sign in | RSH'/>
             <div className='signup-title-container'>
                 <h1 className='signup-title'>Sign in</h1>

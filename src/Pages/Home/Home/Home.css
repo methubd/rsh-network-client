@@ -3,12 +3,6 @@
     
 }
 
-.consultants-head{
-    text-align: center;
-    margin-bottom: -80px;
-    margin-top: 8rem;
-}
-
 /* Medium Screen */
 @media screen and (max-width: 992px) {
     .contact-info-container{

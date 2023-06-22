@@ -5,6 +5,9 @@ import Home from "../Pages/Home/Home/Home";
 import AllDoctors from "../Pages/AllDoctors/AllDoctors";
 import SignUp from "../Pages/SignUp/SignUp";
 import SignIn from "../Pages/SignIn/SignIn";
+import DashboardHome from "../Pages/Dashboard/DashboardHome/DashboardHome";
+import Dashboard from "../Layouts/Dashboard";
+import AddConsultant from "../Pages/Dashboard/AddConsultant/AddConsultant";
 
 const router = createBrowserRouter([
     {
@@ -16,11 +19,11 @@ const router = createBrowserRouter([
             element: <Home></Home>
         },
         {
-            path: '/doctors',
+            path: 'doctors',
             element: <AllDoctors></AllDoctors>
         },
         {
-            path: '/signin',
+            path: 'signin',
             element: <SignIn></SignIn>
         },
         {
@@ -29,6 +32,20 @@ const router = createBrowserRouter([
         }
       ]
     },
+    {
+      path: '/dashboard',
+      element: <Dashboard></Dashboard>,
+      children: [
+        {
+          path: '/dashboard/',
+          element: <DashboardHome></DashboardHome>
+        },
+        {
+          path: '/dashboard/add-consultant',
+          element: <AddConsultant></AddConsultant>
+        }
+      ]
+    }
   ]);
 
 export default router;

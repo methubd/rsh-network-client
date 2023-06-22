@@ -1,9 +1,9 @@
 .doctor-container{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    
     padding: 0 10rem;
-    margin-top: 8rem;
+    gap: 25px;
+    margin-top: 10px;
 }
 
 .doctor-card{
@@ -11,6 +11,7 @@
     margin: 30px;
     text-align: center;
     min-height: 500px;
+    width: 100%;
     border-radius: 10px;
     background-color: #EAEFF2;
 }
@@ -40,24 +41,50 @@
     color: var(--description-color);
 }
 
-
 /* Tab Screen */
 @media screen and (max-width: 992px) {
     .doctor-container{
-        display: block;
         grid-template-columns: repeat(3, 1fr);
-        width: 100%;
-        margin-top: 0rem;
-        padding: 0;
+        padding: 0 10px;
+        gap: 20px;
+    }
+
+    .doctor-card{
+        width: 300px;
+        padding: 0px 0;
+        margin: auto;
     }
 }
+
 
 /* Mobile Screen */
 @media screen and (max-width: 576px) {
     .doctor-container{
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 10px;
+        gap: 15px;
+    }
+
+    .doctor-card{
         width: 100%;
-        padding: 0;
-        gap: 0;
+        padding: 0px 0;
+        margin: auto;
+    }
+
+    .doc-img{
+        border-radius: 50%;
+        margin: 20px 0;
+        width: 100px;
+    }
+
+    .doc-name{
+        font-size: 16px;
+    }
+
+    .doc-speciality{
+        font-size: 10px;
+        color: var(--description-color);
+        padding-bottom: 8px;
     }
 }
+

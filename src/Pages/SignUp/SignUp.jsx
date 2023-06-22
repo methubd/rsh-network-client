@@ -1,10 +1,16 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './SignUp.css'
 import { Helmet } from 'react-helmet';
 import SocialSignUp from '../../components/SocialSignUp/SocialSignUp';
+import useAuth from '../../Hooks/useAuth';
+import { Toaster, toast } from 'react-hot-toast';
 
 
 const SignUp = () => {
+    const {createUser, updateUserProfile, logOut} = useAuth()
+
+    const navigate = useNavigate();
+
     const handleSignUp = event => {
         event.preventDefault();
         const form = event.target;
@@ -12,13 +18,42 @@ const SignUp = () => {
         const email = form.email.value;
         const password = form.password.value;
         const confirm = form.confirm.value;
+
+        if(password !== confirm){
+            toast.error("Password not matched!")
+            return;
+        }
         
-        const newUser = {name, email, password, confirm}
-        console.log(newUser);
+        createUser(email, password)
+        .then(result => {
+            const user = result.user;
+            console.log(user);
+            updateUserProfile(name)
+            .then(() => {
+                const newUser = {name, email}
+                fetch('http://localhost:5000/users', {
+                    method: "POST",
+                    headers: {
+                        "content-type" : "application/json"
+                    },
+                    body: JSON.stringify(newUser)
+                })
+                form.reset();
+                logOut();
+                navigate('/signin')
+            })
+            toast.success("Successfully User Created!")
+        })
     }
 
     return (
         <section className='signup-container'>
+
+            <div className='signin-company-logo'>
+            <Link to='/'><img className='logo ' src="https://i.ibb.co/k8qL7Jf/logo.png" alt="" /></Link>
+            </div>
+
+            <Toaster/>
             <Helmet title='Sign up | RSH'/>
             <div className='signup-title-container'>
                 <h1 className='signup-title'>Join RUSHMONO</h1>

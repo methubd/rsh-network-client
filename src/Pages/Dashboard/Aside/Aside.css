@@ -1,0 +1,28 @@
+aside{
+    background-color: rgb(227, 227, 227);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding: 20px 30px;
+    width: fit-content;
+}
+
+.dashboard-btn{
+    text-decoration: none;
+    margin: 5px 0;
+}
+
+.hr-line{
+    border: 1px solid var(--title-color);
+    margin: 10px 0;
+}
+
+.btn-with-icon{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.back-icon{
+    width: 20px;
+}
