@@ -58,13 +58,14 @@ const AddConsultant = () => {
         const name = form.name.value;
         const bmdc = form.bmdc.value;
         const email = form.email.value;
+        const speciality = form.speciality.value;
         const degree = form.degree.value;
         const designation = form.designation.value;
         const contact = form.contact.value;
         const whatsapp = form.whatsapp.value;
         const facebook = form.facebook.value;
         const image = imgURL;
-        const newConsultantInfo = {name, bmdc, email, degree, designation, contact, whatsapp, facebook, image};
+        const newConsultantInfo = {name, bmdc, email, speciality, degree, designation, contact, whatsapp, facebook, image};
 
         axiosSecure.post('/consultants', newConsultantInfo)
         .then(data => {
