@@ -2,17 +2,52 @@
     width: 100%;
 }
 
-.add-doctor-body{
-    border: 1px solid;
+/* form design */
+
+.add-doctor-field-container{
     width: 50%;
-    padding: 15px;
-    
+    margin: auto;
+    /* background-color: antiquewhite; */
 }
+
+.add-doctor-body{
+    /* border: 1px solid rgb(180, 180, 180); */
+    border-radius: 2px;  
+    padding: 10px 20px;  
+}
+
+.field-container{
+    margin: 10px 0;
+    background-color: rgb(235, 235, 235);
+    padding: 5px 5px;
+    border-radius: 5px;
+}   
 
 .add-doctor-field{
     padding: 10px ;
-    width: 96.5%;
+    width: 96%;
     border: 1px solid rgb(192, 192, 192);
     font-size: 14px;
     outline: none;
+    border-radius: 5px;
+}
+
+.btn-container{
+    text-align: center;
+    padding: 20px 0;
+}
+
+@media screen and (max-width: 576px) {
+
+    .add-doctor-field-container{
+        width: 100%;
+        border: none;
+    }
+
+    .add-doctor-field{
+        width: 91%;
+    }
+
+    
+    
 }

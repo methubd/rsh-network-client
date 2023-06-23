@@ -19,8 +19,7 @@ const Aside = () => {
             <hr className='hr-line' />
             
             {/* Admin Routes */}
-            <Link className='dashboard-btn btn-primary' to='/dashboard/add-consultant'>Add Consultant</Link>
-            <Link className='dashboard-btn btn-primary' to='/dashboard/'>Manage Users</Link>
+            <Link className='dashboard-btn btn-primary' to='/dashboard/manage-users'>Manage Users</Link>
             <Link className='dashboard-btn btn-primary' to='/dashboard/'>Manage Consultants</Link>
 
             <hr className='hr-line' />

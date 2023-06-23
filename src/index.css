@@ -58,6 +58,33 @@
     cursor: pointer;
 }
 
+/* Descriptions */
+
+.description{
+    
+    font-size: 12px;
+    color: var(--description-color);
+    padding-top: 5px;
+}
+
+/* Form Styles */
+
+/* Software wornings */
+.software-warning{
+    color: rgb(133, 133, 133);
+    width: 50%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+/* Loading Icon */
+
+
 @media screen and (max-width: 992px) {
     :root{
         --primary-width: fit;

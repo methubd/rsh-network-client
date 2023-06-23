@@ -3,7 +3,6 @@ import './Doctors.css'
 
 const Doctors = () => {
 
-
     return (        
         <div className="doctor-container">
             <Helmet title="Doctors | RSH"/>

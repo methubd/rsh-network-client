@@ -8,6 +8,8 @@ import SignIn from "../Pages/SignIn/SignIn";
 import DashboardHome from "../Pages/Dashboard/DashboardHome/DashboardHome";
 import Dashboard from "../Layouts/Dashboard";
 import AddConsultant from "../Pages/Dashboard/AddConsultant/AddConsultant";
+import ManageUsers from "../Pages/Dashboard/ManageUsers/ManageUsers";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -41,8 +43,13 @@ const router = createBrowserRouter([
           element: <DashboardHome></DashboardHome>
         },
         {
-          path: '/dashboard/add-consultant',
-          element: <AddConsultant></AddConsultant>
+          path: '/dashboard/add-consultant/:id',
+          element: <PrivateRoute><AddConsultant></AddConsultant></PrivateRoute>, 
+          loader: async ({params}) => await `http://localhost:5000/users/${params.id}`
+        },
+        {
+          path: '/dashboard/manage-users',
+          element: <ManageUsers></ManageUsers>
         }
       ]
     }

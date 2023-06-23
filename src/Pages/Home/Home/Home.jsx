@@ -10,6 +10,9 @@ import SectionTitle from '../../../components/SectionTitle/SectionTitle';
 const Home = () => {
     return (
         <section>
+
+            {/* TODO: https://www.airtable.com/ try this one style add atleast engineered for enterprice part */}
+
             <Helmet title='Home | RSH'/>
             
             {/* <ContactInfo></ContactInfo> */}
