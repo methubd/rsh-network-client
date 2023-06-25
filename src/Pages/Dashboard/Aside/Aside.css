@@ -26,3 +26,10 @@ aside{
 .back-icon{
     width: 20px;
 }
+
+@media screen and (max-width: 992px) {
+    aside{
+        display: none;
+    }
+    
+}

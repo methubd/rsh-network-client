@@ -57,15 +57,16 @@ const AddConsultant = () => {
         const form = event.target;
         const name = form.name.value;
         const bmdc = form.bmdc.value;
-        const email = form.email.value;
+        const email = specificUser?.email;
         const speciality = form.speciality.value;
         const degree = form.degree.value;
+        const chamberDay = form.chamberDay.value;
         const designation = form.designation.value;
         const contact = form.contact.value;
         const whatsapp = form.whatsapp.value;
         const facebook = form.facebook.value;
         const image = imgURL;
-        const newConsultantInfo = {name, bmdc, email, speciality, degree, designation, contact, whatsapp, facebook, image};
+        const newConsultantInfo = {name, bmdc, email, speciality, degree, designation, contact, whatsapp, facebook, chamberDay, image};
 
         axiosSecure.post('/consultants', newConsultantInfo)
         .then(data => {
@@ -75,6 +76,11 @@ const AddConsultant = () => {
                 form.reset();
             }
         });
+        
+        axiosSecure.put('/users', {email: specificUser?.email, role: 'doctor'})
+        .then(data => {
+            console.log(data.status);
+        })
     }
 
     // TODO: change user role from userCollection
@@ -94,6 +100,7 @@ const AddConsultant = () => {
                     <input className='form-field' type="text" name="speciality" placeholder='Speciality *' />
                     <input className='form-field' type="text" name="degree" placeholder='Degrees *' />
                     <input className='form-field' type="text" name="designation" placeholder='Designation' />
+                    <input className='form-field' type="text" name="chamberDay" placeholder='Chamber Day' />
                     <input className='form-field' type="text" name="contact" placeholder='Contact Number *' />
                     <input className='form-field' type="text" name="whatsapp" placeholder='WhatsApp *' />
                     <input className='form-field' type="text" name="facebook" placeholder='Facebook profile URL *' />
@@ -105,7 +112,6 @@ const AddConsultant = () => {
                         <Loading></Loading>
                         :
                         <input className='form-field btn-getStarted' type="submit" value='Submit' />
-
                     }
 
                 </form>

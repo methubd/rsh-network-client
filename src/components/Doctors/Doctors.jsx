@@ -29,8 +29,11 @@ const Doctors = () => {
                 <h3 className='doc-name'>{consultant?.name}</h3>
                 <p className='doc-speciality'>{consultant?.speciality}</p>
                 <p className='doc-speciality'>{consultant?.degree}</p>
-                <p className='chamber-days'>Sat - Fri</p>
-                <button className='btn-primary'>Appointment</button>
+                <p className='chamber-days'>{consultant?.chamberDay}</p>
+                
+                <div>
+                    <button className='btn-primary'>Appointment</button>
+                </div>
             </div>)
             }
 

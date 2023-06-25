@@ -10,6 +10,7 @@ import Dashboard from "../Layouts/Dashboard";
 import AddConsultant from "../Pages/Dashboard/AddConsultant/AddConsultant";
 import ManageUsers from "../Pages/Dashboard/ManageUsers/ManageUsers";
 import PrivateRoute from "./PrivateRoute";
+import ManageConsultant from "../Pages/Dashboard/ManageConsultant/ManageConsultant";
 
 const router = createBrowserRouter([
     {
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
         {
           path: '/dashboard/manage-users',
           element: <ManageUsers></ManageUsers>
+        },
+        {
+          path: '/dashboard/manage-consultant',
+          element: <ManageConsultant></ManageConsultant>
         }
       ]
     }

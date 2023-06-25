@@ -6,6 +6,7 @@ import './Aside.css'
 const Aside = () => {
     return (
         <aside>
+            
             <button>Hide</button>
             
             {/* User Routes */}
@@ -20,7 +21,7 @@ const Aside = () => {
             
             {/* Admin Routes */}
             <Link className='dashboard-btn btn-primary' to='/dashboard/manage-users'>Manage Users</Link>
-            <Link className='dashboard-btn btn-primary' to='/dashboard/'>Manage Consultants</Link>
+            <Link className='dashboard-btn btn-primary' to='/dashboard/manage-consultant'>Manage Consultants</Link>
 
             <hr className='hr-line' />
             <Link className='dashboard-btn btn-secondary btn-with-icon' to='/'>Go Back <ArrowLeftIcon className='back-icon'/> </Link>
