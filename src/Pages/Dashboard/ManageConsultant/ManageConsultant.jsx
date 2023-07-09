@@ -4,6 +4,7 @@ import DashboardTitle from '../../../components/DashboardTitle/DashboardTitle';
 import './ManageConsultant.css'
 import Loading from '../../../components/Loading/Loading';
 import Swal from 'sweetalert2';
+import { Helmet } from 'react-helmet';
 
 const ManageConsultant = () => {
     const [axiosSecure] = useAxiosSecure()
@@ -47,6 +48,7 @@ const ManageConsultant = () => {
     
     return (
         <div className='add-consultant-container'>
+            <Helmet title='RSH | Manage Consultant'/>
             <DashboardTitle title="Manage Consultant"/>
         {            
             consultants.map(consultant => <div 

@@ -1,9 +1,10 @@
-import './MakeAppointment.css'
+import './SubmitQuery.css'
 
-const MakeAppointment = () => {
+const SubmitQuery = () => {
 
-    const handleMakeAppointment = event => {
+    const handleSubmitQuery = event => {
         event.preventDefault();
+        console.log('Submit Query Btn Clicked');
     }
     return (
 
@@ -14,7 +15,7 @@ const MakeAppointment = () => {
                 <p>Within 24hrs we will answer<br />your query. <br />Don’t hesitate, contact us for <br /> better help and services</p>
             </div>
             <div className='appointment-body'>
-                <form className='field-body' onSubmit={handleMakeAppointment}>
+                <form className='field-body' onSubmit={handleSubmitQuery}>
                     
                     <input className="appointment-field" type="text" name="name" placeholder='Enter Full Name'/>
 
@@ -35,4 +36,4 @@ const MakeAppointment = () => {
     );
 };
 
-export default MakeAppointment;
+export default SubmitQuery;

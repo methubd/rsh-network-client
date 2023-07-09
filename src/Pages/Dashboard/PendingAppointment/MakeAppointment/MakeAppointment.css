@@ -1,0 +1,37 @@
+.make-appointment-container{
+    margin: 5rem 0;
+}
+
+.appointment-body{
+    margin: auto;
+}
+
+.appointment-body h4 {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: rgb(108, 108, 108);
+}
+
+.btn-container{
+    margin: auto;
+}
+
+.doctor-fee{
+    text-align: center;
+    font-size: 14px;
+    color: rgb(140, 140, 140);
+    /* background-color: rgb(226, 226, 226);
+    padding: 5px; */
+}
+
+.doctor-head{
+    color: var(--secondary-color);
+    font-weight: 700;
+}
+
+@media screen and (max-width: 576px) {
+    .make-appointment-container{
+        margin-top: 1rem;
+    }
+    
+}

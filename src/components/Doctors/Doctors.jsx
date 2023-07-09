@@ -3,9 +3,10 @@ import './Doctors.css'
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import Loading from '../Loading/Loading';
+import { Link } from 'react-router-dom';
 
 const Doctors = () => {
-
+    
     const {data: consultants = [], isLoading: isConsultantsLoading} = useQuery(['consultants'], 
     async () => {
         const res = await axios.get('http://localhost:5000/consultants')
@@ -16,7 +17,6 @@ const Doctors = () => {
         return <Loading></Loading>
     }
 
-    console.log(consultants);
 
     return (        
         <div className="doctor-container">
@@ -32,8 +32,9 @@ const Doctors = () => {
                 <p className='chamber-days'>{consultant?.chamberDay}</p>
                 
                 <div>
-                    <button className='btn-primary'>Appointment</button>
+                    <Link className='btn-primary' to={`/make-appointment/${consultant?._id}`}>Appointment</Link>
                 </div>
+
             </div>)
             }
 

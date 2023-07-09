@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import './SingleUser.css'
 import useAxiosSecure from '../../../../Hooks/useAxiosSecure';
+import Swal from 'sweetalert2';
 
 const SingleUser = ({user}) => {
 
@@ -9,7 +10,15 @@ const SingleUser = ({user}) => {
     const handleRevertUser = (user) => {
         axiosSecure.put('/users', {email: user?.email, role: 'user'})
         .then(data => {
-            console.log(data.status);
+            if(data.status === 200){
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: `${user.name} is now User!`,
+                    showConfirmButton: false,
+                    timer: 1500
+                  })
+            }
         })
     }
 

@@ -12,7 +12,7 @@ const Aside = () => {
             {/* User Routes */}
             <Link className='dashboard-btn btn-primary' to='/dashboard/'>Home</Link>
             <Link className='dashboard-btn btn-primary' to='/dashboard/'>Prescription</Link>
-            <Link className='dashboard-btn btn-primary' to='/dashboard/'>Pending Appointment</Link>
+            <Link className='dashboard-btn btn-primary' to='/dashboard/pending-appointment'>Pending Appointment</Link>
             <hr className='hr-line' />
 
             <Link className='dashboard-btn btn-primary' to='/dashboard/'>Payment History</Link>

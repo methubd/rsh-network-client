@@ -1,7 +1,7 @@
 import './Home.css'
 import Banner from "../Banner/Banner";
 import Doctors from '../../../components/Doctors/Doctors';
-import MakeAppointment from '../../../components/MakeAppointment/MakeAppointment';
+import SubmitQuery from '../../../components/SubmitQuery/SubmitQuery';
 import PremiumButtons from '../../../components/PremiumButtons/PremiumButtons';
 import { Helmet } from 'react-helmet';
 import SectionTitle from '../../../components/SectionTitle/SectionTitle';
@@ -31,7 +31,7 @@ const Home = () => {
             </div>
 
             {/* Make Appointment */}
-            <MakeAppointment></MakeAppointment>
+            <SubmitQuery></SubmitQuery>
             
         </section>
     );

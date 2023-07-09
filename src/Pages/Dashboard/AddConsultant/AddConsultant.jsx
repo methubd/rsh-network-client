@@ -24,6 +24,7 @@ const AddConsultant = () => {
             return res.data;
         }
         )
+        
     refetch()
         
     // uploading doctor image
@@ -62,11 +63,12 @@ const AddConsultant = () => {
         const degree = form.degree.value;
         const chamberDay = form.chamberDay.value;
         const designation = form.designation.value;
+        const consultationFee = form.consultantFee.value;
         const contact = form.contact.value;
         const whatsapp = form.whatsapp.value;
         const facebook = form.facebook.value;
         const image = imgURL;
-        const newConsultantInfo = {name, bmdc, email, speciality, degree, designation, contact, whatsapp, facebook, chamberDay, image};
+        const newConsultantInfo = {name, bmdc, email, speciality, degree, designation, consultationFee , contact, whatsapp, facebook, chamberDay, image};
 
         axiosSecure.post('/consultants', newConsultantInfo)
         .then(data => {
@@ -95,16 +97,29 @@ const AddConsultant = () => {
 
                 <form onSubmit={handleAddConsultant} className='form-body'>
                     <input className='form-field' type="text" name="name" placeholder='Doctor Name *' defaultValue={specificUser?.name} readOnly/>
+
                     <input className='form-field' type="email" name="email" placeholder='Doctor email *' defaultValue={specificUser?.email} readOnly/>
+
                     <input className='form-field' type="text" name="bmdc" placeholder='BMDC Registration No. *' />
+
                     <input className='form-field' type="text" name="speciality" placeholder='Speciality *' />
+
                     <input className='form-field' type="text" name="degree" placeholder='Degrees *' />
+
                     <input className='form-field' type="text" name="designation" placeholder='Designation' />
+
                     <input className='form-field' type="text" name="chamberDay" placeholder='Chamber Day' />
+
+                    <input className='form-field' type="number" name="consultantFee" placeholder='Consultation Fee *' required />
+
                     <input className='form-field' type="text" name="contact" placeholder='Contact Number *' />
+
                     <input className='form-field' type="text" name="whatsapp" placeholder='WhatsApp *' />
+
                     <input className='form-field' type="text" name="facebook" placeholder='Facebook profile URL *' />
+
                     <label className='description' htmlFor="image">Upload Doctor Profile Picture</label>
+
                     <input onChange={UploadImage} className='form-field' name='image' type="file"/>
 
                     {

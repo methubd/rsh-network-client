@@ -1,4 +1,5 @@
 import './ManageUsers.css'
+import { Helmet } from 'react-helmet';
 import { useQuery } from '@tanstack/react-query';
 import useAxiosSecure from '../../../Hooks/useAxiosSecure';
 import DashboardTitle from '../../../components/DashboardTitle/DashboardTitle';
@@ -19,6 +20,7 @@ const ManageUsers = () => {
 
     return (
         <div className='add-consultant-container'>
+            <Helmet title='RSH | Manage Users'/>
             <DashboardTitle title="Manage Users"/>
             {/* <h1>User : {users.length}</h1> */}
             {
