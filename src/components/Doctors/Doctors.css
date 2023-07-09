@@ -39,6 +39,7 @@
 .chamber-days{
     padding-bottom: 8px;
     color: var(--description-color);
+    margin-bottom: 1rem;
 }
 
 /* Tab Screen */

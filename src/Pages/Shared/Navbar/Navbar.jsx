@@ -20,11 +20,16 @@ const Navbar = () => {
     
     const menuItems = <>
                     <Link className='menu-item' to='/'>Home</Link>
-                    <Link className='menu-item' >Services</Link>
+
+                    { user &&
+                        <Link className='menu-item dashboard-menu' to='/dashboard'>dashboard</Link>
+                    }
+
+                    {/* <Link className='menu-item' >Services</Link> */}
                     <Link className='menu-item' to='/doctors'>Doctors</Link>
-                    <Link className='menu-item' >Departments</Link>
-                    <Link className='menu-item' >Pricing</Link>
-                    <Link className='menu-item' >Gallery</Link>
+                    {/* <Link className='menu-item' >Departments</Link> */}
+                    {/* <Link className='menu-item' >Pricing</Link> */}
+                    {/* <Link className='menu-item' >Gallery</Link> */}
                     <Link className='menu-item' >Blog</Link>
                     <Link className='menu-item' >Contact</Link>
                     { user ?

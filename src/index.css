@@ -85,6 +85,31 @@
 
 /* Loading Icon */
 
+/* Animations */
+.fade-in{
+    animation: container 1.25s ease-in-out;
+  }
+  
+  @keyframes container {
+    0% {
+      opacity: 20%;
+    }
+    30%{
+      opacity: 80%;
+    }
+    100% {
+        opacity: 100%;
+    }
+  }
+
+.body-border{
+    transition: 0.3s;
+}
+
+.body-border:hover{
+    border: 1px solid rgb(157, 157, 157);
+}
+
 
 @media screen and (max-width: 992px) {
     :root{

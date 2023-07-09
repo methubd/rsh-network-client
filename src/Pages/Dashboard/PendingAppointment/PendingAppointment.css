@@ -1,0 +1,21 @@
+.total-bill-container{
+    padding: 20px;
+    text-align: center;
+}
+
+.bill-amount{
+    color: var(--secondary-color);
+}
+
+.total-bill-container h3 {
+    color: var(--description-color);
+    padding-bottom: 1rem;
+}
+
+.appointment-status{
+    background-color: rgb(74, 74, 74);
+    color: white;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 13px;
+}

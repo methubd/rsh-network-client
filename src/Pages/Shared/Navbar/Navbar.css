@@ -34,6 +34,11 @@ nav{
     color: var(--primary-color);
 }
 
+.dashboard-menu{
+    border: 1px solid var(--description-color);
+    padding: 5px 10px;
+}
+
 .menu-icon{
     width: 2rem;
     height: 2rem;

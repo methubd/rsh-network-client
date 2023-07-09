@@ -5,11 +5,15 @@ import SubmitQuery from '../../../components/SubmitQuery/SubmitQuery';
 import PremiumButtons from '../../../components/PremiumButtons/PremiumButtons';
 import { Helmet } from 'react-helmet';
 import SectionTitle from '../../../components/SectionTitle/SectionTitle';
+
+
 // import ContactInfo from '../../../components/ContactInfo/ContactInfo';
 
-const Home = () => {
+const Home = () => {   
+
+    
     return (
-        <section>
+        <section className='fade-in'>
 
             {/* TODO: https://www.airtable.com/ try this one style add atleast engineered for enterprice part */}
 
@@ -27,7 +31,9 @@ const Home = () => {
                 subHeading="Quality consultation server is our commitment"
                 />
                 
-                <Doctors></Doctors>
+                <div>
+                    <Doctors></Doctors>
+                </div>
             </div>
 
             {/* Make Appointment */}

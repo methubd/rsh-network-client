@@ -19,7 +19,7 @@ const Doctors = () => {
 
 
     return (        
-        <div className="doctor-container">
+        <div className="doctor-container fade-in">
             <Helmet title="Doctors | RSH"/>
 
             {

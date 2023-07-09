@@ -18,8 +18,8 @@ const PrivateRoute = ({children}) => {
         navigate('/')
 
         Swal.fire({
-            title: 'Would you like to login?',
-            text: "You have to login to make this action!",
+            title: 'Please Login',
+            text: `You have to login to make this action!`,
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#3085d6',

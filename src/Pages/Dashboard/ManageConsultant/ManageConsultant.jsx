@@ -8,6 +8,7 @@ import { Helmet } from 'react-helmet';
 
 const ManageConsultant = () => {
     const [axiosSecure] = useAxiosSecure()
+    
     const {data: consultants = [], refetch, isLoading: isConsultantLoading} = useQuery(['consultants'],
     async () => {
         const res = await axiosSecure.get('/consultants')

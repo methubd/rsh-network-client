@@ -1,4 +1,4 @@
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigate } from 'react-router-dom';
 import './MakeAppointment.css'
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
@@ -10,6 +10,7 @@ const MakeAppointment = () => {
 
     const consultantLink = useLoaderData();
     const {user} = useAuth();
+    const navigate = useNavigate();
 
     const {data: selectedConsultant = {}, isLoading:isSelectedConsultantLoading } = useQuery(['selectedConsultant', consultantLink], 
         async () => {
@@ -42,18 +43,20 @@ const MakeAppointment = () => {
                 Swal.fire({
                     position: 'center',
                     icon: 'success',
-                    title: 'Successfully Appointment Created!',
+                    title: 'Successfully Appointment Created, Please Pay!',
                     showConfirmButton: false,
                     timer: 1500
                   })
                   form.reset()
+                  navigate('/dashboard/pending-appointment')
+                  
             }
         })
     }
 
     return (
         <div className='make-appointment-container'>
-            <div className='appointment-body'>
+            <div className='appointment-body fade-in body-border'>
             <h4>- Please Enter Patient Details -</h4>
                 <form className='field-body' onSubmit={handleMakeAppointment}>
                     <input className="appointment-field" type="text" name="name" placeholder='Patient Full Name' required/>

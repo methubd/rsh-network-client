@@ -28,7 +28,7 @@ const SubmitQuery = () => {
                     <textarea className="appointment-field" name="message" cols="30" rows="5"></textarea>
 
                     <br />
-                    <input className='btn-primary' type="submit" value="Submit" />
+                    <input className='btn-primary' type="submit" value="Submit Query" />
                 </form>
             </div>
 
