@@ -4,13 +4,14 @@
 }
 
 aside{
-    /* background-color: rgb(227, 227, 227); */
+    background-color: rgba(227, 227, 227, 0.697);
     display: flex;
     flex-direction: column;
     height: 100vh;
     padding: 20px 30px;
-    width: 300px;
-    margin-top: 3rem;
+    width: 250px;
+    margin-top: 5rem;
+    /* border-right: 1px solid rgb(194, 194, 194); */
 }
 
 .dashboard-expand-icon{
@@ -52,8 +53,11 @@ aside{
         /* display: none; */
         /* width: 100vh; */
         position: absolute;
-        background-color: white;
+        background-color: rgb(255, 255, 255);
+        border: 1px solid rgb(225, 225, 225);
+        border-radius: 10px;
         height: fit-content;
+        z-index: 1;
     }
     
 }

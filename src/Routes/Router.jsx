@@ -13,6 +13,10 @@ import PrivateRoute from "./PrivateRoute";
 import ManageConsultant from "../Pages/Dashboard/ManageConsultant/ManageConsultant";
 import PendingAppointment from "../Pages/Dashboard/PendingAppointment/PendingAppointment";
 import MakeAppointment from "../Pages/Dashboard/PendingAppointment/MakeAppointment/MakeAppointment";
+import UpdateProfile from "../Pages/Dashboard/UpdateProfile/UpdateProfile";
+import Prescription from "../Pages/Dashboard/Prescription/Prescription";
+import PaymentHistory from "../Pages/Dashboard/PaymentHistory/PaymentHistory";
+import ManageAppointments from "../Pages/Dashboard/ManageAppointments/ManageAppointments";
 
 const router = createBrowserRouter([
     {
@@ -70,6 +74,22 @@ const router = createBrowserRouter([
         {
           path: '/dashboard/manage-consultant',
           element: <ManageConsultant></ManageConsultant>
+        }, 
+        {
+          path: '/dashboard/update-profile',
+          element: <PrivateRoute><UpdateProfile></UpdateProfile></PrivateRoute>
+        }, 
+        {
+          path: '/dashboard/prescription',
+          element: <PrivateRoute><Prescription></Prescription></PrivateRoute>
+        },
+        {
+          path: '/dashboard/payment-history',
+          element: <PrivateRoute> <PaymentHistory></PaymentHistory> </PrivateRoute>
+        }, 
+        {
+          path: '/dashboard/manage-appointments',
+          element: <PrivateRoute> <ManageAppointments></ManageAppointments> </PrivateRoute>
         }
       ]
     }
