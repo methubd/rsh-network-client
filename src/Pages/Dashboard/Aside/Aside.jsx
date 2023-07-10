@@ -27,7 +27,7 @@ const Aside = () => {
             </Link>
 
             <Link className='dashboard-btn btn-with-icon' to='/dashboard/pending-appointment'>
-            <CurrencyBangladeshiIcon className='dashboard-menu-icon'/> Pending Appointments
+            <CurrencyBangladeshiIcon className='dashboard-menu-icon'/> Pending Service
             </Link>
 
             <hr className='hr-line' />

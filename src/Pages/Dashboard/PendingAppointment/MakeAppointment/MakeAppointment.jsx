@@ -29,13 +29,23 @@ const MakeAppointment = () => {
         const name = form.name.value;
         const age = form.age.value;
         const weigth = form.weigth.value;
+        const contact = form.contact.value;
         const brief = form.brief.value;
         const doctorName = selectedConsultant?.name;
         const doctorEmail = selectedConsultant?.email;
         const doctorFee = selectedConsultant?.consultationFee;
         const userEmail = user?.email;
 
-        const newAppointment = {name, age, weigth, brief, doctorName, doctorEmail, userEmail, doctorFee, status: "pending"};
+        const newAppointment = {name, 
+            age, 
+            weigth, 
+            contact, 
+            brief, 
+            doctorName, 
+            doctorEmail, 
+            userEmail, 
+            doctorFee, 
+            status: "Pending"};
 
         axios.post('http://localhost:5000/appointments', newAppointment)
         .then(data => {
@@ -59,11 +69,13 @@ const MakeAppointment = () => {
             <div className='appointment-body fade-in body-border'>
             <h4>- Please Enter Patient Details -</h4>
                 <form className='field-body' onSubmit={handleMakeAppointment}>
-                    <input className="appointment-field" type="text" name="name" placeholder='Patient Full Name' required/>
+                    <input className="appointment-field" type="text" name="name" placeholder='Patient Full Name *' required/>
 
-                    <input className="appointment-field" type="number" name="age" placeholder='Age' required/>
+                    <input className="appointment-field" type="number" name="age" placeholder='Age *' required/>
 
-                    <input className="appointment-field" type="number" name="weigth" placeholder='Weight'required/>
+                    <input className="appointment-field" type="number" name="weigth" placeholder='Weight *'required/>
+
+                    <input className="appointment-field" type="number" name="contact" placeholder='Mobile Number *'required/>
 
                     <textarea className="appointment-field" name="brief" cols="30" rows="5" placeholder='Short brief'></textarea>
 

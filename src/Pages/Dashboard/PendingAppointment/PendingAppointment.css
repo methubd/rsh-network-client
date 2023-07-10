@@ -19,3 +19,10 @@
     padding: 5px 10px;
     font-size: 13px;
 }
+
+.caution-dont{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5rem;
+}

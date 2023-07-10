@@ -2,7 +2,7 @@
     padding: 2rem;
     text-align: center;
     background-color: rgb(245, 234, 212);
-    width: var(--primary-width);
+    width: fit-content;
     margin: 10px auto;
     border-radius: 10px;
 }
