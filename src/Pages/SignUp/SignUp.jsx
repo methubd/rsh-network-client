@@ -47,7 +47,7 @@ const SignUp = () => {
     }
 
     return (
-        <section className='signup-container'>
+        <section className='signup-container fade-in'>
 
             <div className='signin-company-logo'>
             <Link to='/'><img className='logo ' src="https://i.ibb.co/k8qL7Jf/logo.png" alt="" /></Link>

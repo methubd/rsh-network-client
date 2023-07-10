@@ -30,7 +30,7 @@ const SignIn = () => {
 
     return (
         // https://app.tooljet.com/login?redirectTo=/
-        <section className='signup-container'>
+        <section className='signup-container fade-in'>
             
             <div className='signin-company-logo'>
             <Link to='/'><img className='logo ' src="https://i.ibb.co/k8qL7Jf/logo.png" alt="" /></Link>
@@ -38,7 +38,7 @@ const SignIn = () => {
 
             <Toaster/>
             <Helmet title='Sign in | RSH'/>
-            <div className='signup-title-container'>
+            <div className='signup-title-container '>
                 <h1 className='signup-title'>Sign in</h1>
                 <p className='signup-description'><small>New to RUSHMONO? <Link to='/signup'>Sign Up</Link></small></p>
             </div>
