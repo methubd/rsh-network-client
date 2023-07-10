@@ -1,6 +1,9 @@
 .dashboard-menu-expand{
-    padding: 20px 30px;
+    margin: 20px 30px;
     position: absolute;
+    border: 1px solid rgb(216, 216, 216);
+    border-radius: 8px;
+    padding: 4px 8px 0px 8px;
 }
 
 aside{
