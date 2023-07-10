@@ -36,7 +36,14 @@ nav{
 
 .dashboard-menu{
     border: 1px solid var(--description-color);
+    border-radius: 5px;
     padding: 5px 10px;
+}
+
+.dashboard-menu:hover{
+    background-color: var(--primary-color);
+    color: white;
+    border: 1px solid var(--primary-color);
 }
 
 .menu-icon{
