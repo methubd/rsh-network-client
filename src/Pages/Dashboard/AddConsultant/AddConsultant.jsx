@@ -72,7 +72,6 @@ const AddConsultant = () => {
 
         axiosSecure.post('/consultants', newConsultantInfo)
         .then(data => {
-            console.log(data.status);
             if(data.status === 200){
                 toast.success('Successfully doctor added!')
                 form.reset();

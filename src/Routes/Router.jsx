@@ -17,6 +17,7 @@ import UpdateProfile from "../Pages/Dashboard/UpdateProfile/UpdateProfile";
 import Prescription from "../Pages/Dashboard/Prescription/Prescription";
 import PaymentHistory from "../Pages/Dashboard/PaymentHistory/PaymentHistory";
 import ManageAppointments from "../Pages/Dashboard/ManageAppointments/ManageAppointments";
+import AddReview from "../Pages/Dashboard/AddReview/AddReview";
 
 const router = createBrowserRouter([
     {
@@ -90,6 +91,10 @@ const router = createBrowserRouter([
         {
           path: '/dashboard/manage-appointments',
           element: <PrivateRoute> <ManageAppointments></ManageAppointments> </PrivateRoute>
+        }, 
+        {
+          path: '/dashboard/add-review',
+          element: <PrivateRoute> <AddReview></AddReview> </PrivateRoute>
         }
       ]
     }

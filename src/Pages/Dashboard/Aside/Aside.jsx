@@ -1,4 +1,4 @@
-import { ArrowLeftIcon, HomeIcon, UserGroupIcon, UserCircleIcon, TableCellsIcon, BanknotesIcon, CurrencyBangladeshiIcon , Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid'
+import { ArrowLeftIcon, HomeIcon, UserGroupIcon, UserCircleIcon, TableCellsIcon, BanknotesIcon, CurrencyBangladeshiIcon , Bars3Icon, XMarkIcon, HandThumbUpIcon } from '@heroicons/react/24/solid'
 
 import { Link } from 'react-router-dom';
 import './Aside.css'
@@ -12,7 +12,7 @@ const Aside = () => {
     const [dbMenu, setDBMenu] = useState(false);
 
     const handleMenu = () => {
-        console.log('Clicked');
+        
     }
 
     const handleLogout = () => {
@@ -63,6 +63,10 @@ const Aside = () => {
 
                     <Link className='dashboard-btn btn-with-icon' to='/dashboard/update-profile'> 
                     <UserCircleIcon className='dashboard-menu-icon'/>Update Profile
+                    </Link>
+
+                    <Link className='dashboard-btn btn-with-icon' to='/dashboard/add-review'> 
+                    <HandThumbUpIcon className='dashboard-menu-icon'/>Add your Review
                     </Link>
 
                     <hr className='hr-line' />

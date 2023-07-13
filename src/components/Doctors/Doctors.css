@@ -37,9 +37,13 @@
 }
 
 .chamber-days{
-    padding-bottom: 8px;
     color: var(--description-color);
-    margin-bottom: 1rem;
+    margin-bottom: .5rem;
+}
+
+.btn-doc-profile{
+    text-decoration: none;
+    
 }
 
 /* Tab Screen */
