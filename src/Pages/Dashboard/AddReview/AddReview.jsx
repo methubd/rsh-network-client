@@ -24,13 +24,23 @@ const AddReview = () => {
 
         axiosSecure.post('/patient-review', patientReview)
         .then(data => {
-            console.log(data.status);
-            if (data.status === 200) {
+            console.log(data.data);
+            if(data.data.duplicate === true){
+                Swal.fire(
+                    'Sorry!',
+                    'You already added a review!',
+                    'error'
+                  )
+                  form.reset();
+            }
+
+            else if (data.status === 200) {
                 Swal.fire(
                     'Success!',
                     'Your review has been added.',
                     'success'
                   )
+                  form.reset()
             }
         })
 
