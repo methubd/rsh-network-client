@@ -4,6 +4,7 @@ import './Navbar.css'
 import { useState } from 'react';
 import useAuth from '../../../Hooks/useAuth';
 import { Toaster, toast } from 'react-hot-toast';
+import HospitalLogo from '../../../components/HospitalLogo/HospitalLogo';
 
 const Navbar = () => {
     const [menu, setMenu] = useState(false);
@@ -48,7 +49,7 @@ const Navbar = () => {
             <Toaster/>
 
             <div className='logo-container'>
-                <Link to='/'><img className='logo' src="https://i.ibb.co/k8qL7Jf/logo.png" alt="" /></Link>
+                <HospitalLogo/>
             </div>
 
             <div className='menu-container'>

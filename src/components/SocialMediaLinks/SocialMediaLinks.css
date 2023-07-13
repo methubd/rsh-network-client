@@ -1,0 +1,15 @@
+.social-links-container{
+    padding: 10px 0;
+}
+
+.social-icons{
+    font-size: 24px;
+    transition: 0.3s;
+    cursor: pointer;
+    margin-right: 8px;
+    color: var(--description-color);
+}
+
+.social-icons:hover{
+    color: var(--secondary-color);
+}

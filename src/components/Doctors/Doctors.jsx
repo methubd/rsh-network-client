@@ -6,7 +6,7 @@ import Loading from '../Loading/Loading';
 import { Link } from 'react-router-dom';
 
 const Doctors = () => {
-    
+        
     const {data: consultants = [], isLoading: isConsultantsLoading} = useQuery(['consultants'], 
     async () => {
         const res = await axios.get('http://localhost:5000/consultants')

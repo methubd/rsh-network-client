@@ -13,7 +13,7 @@ const PremiumButtons = () => {
                 </div>
 
                 <div className='single-btn-container'>
-                    <button className='btn-premium-health'> <DocumentCheckIcon className='btn-icons'/>One Health Protections</button>
+                    <button className='btn-premium-health'> <DocumentCheckIcon className='btn-icons'/>One Medical Investigations</button>
                     <p className='btn-description'>Including normal delivery, providing quality service.</p>
                 </div>
 

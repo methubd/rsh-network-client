@@ -5,12 +5,11 @@ import SubmitQuery from '../../../components/SubmitQuery/SubmitQuery';
 import PremiumButtons from '../../../components/PremiumButtons/PremiumButtons';
 import { Helmet } from 'react-helmet';
 import SectionTitle from '../../../components/SectionTitle/SectionTitle';
-
+import MedicalDepartments from '../MedicalDepartments/MedicalDepartments';
 
 // import ContactInfo from '../../../components/ContactInfo/ContactInfo';
 
 const Home = () => {   
-
     
     return (
         <section className='fade-in'>
@@ -22,12 +21,13 @@ const Home = () => {
             {/* <ContactInfo></ContactInfo> */}
             <Banner></Banner>
             <PremiumButtons></PremiumButtons>
+            <MedicalDepartments></MedicalDepartments>
 
             {/* Consultants */}
 
             <div className='consultants-container'>
                 <SectionTitle 
-                heading="Our Consultants"
+                heading="Team Of Consultants"
                 subHeading="Quality consultation server is our commitment"
                 />
                 
