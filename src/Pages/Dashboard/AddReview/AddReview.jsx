@@ -24,7 +24,6 @@ const AddReview = () => {
 
         axiosSecure.post('/patient-review', patientReview)
         .then(data => {
-            console.log(data.data);
             if(data.data.duplicate === true){
                 Swal.fire(
                     'Sorry!',

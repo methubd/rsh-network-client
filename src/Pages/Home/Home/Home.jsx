@@ -7,6 +7,7 @@ import { Helmet } from 'react-helmet';
 import SectionTitle from '../../../components/SectionTitle/SectionTitle';
 import MedicalDepartments from '../MedicalDepartments/MedicalDepartments';
 import Overview from '../Overview/Overview';
+import PatientReview from '../PatientReview/PatientReview';
 
 // import ContactInfo from '../../../components/ContactInfo/ContactInfo';
 
@@ -34,12 +35,17 @@ const Home = () => {
                 
                 <div>
                     <Doctors></Doctors>
-                <Overview></Overview>
+                    <Overview></Overview>
+                    <SectionTitle 
+                    heading="Whats our patients saying"
+                    subHeading="We are providing world class health service from starting"
+                    />
+                    <PatientReview></PatientReview>
                 </div>
             </div>
 
             {/* Make Appointment */}
-            <SubmitQuery></SubmitQuery>
+            {/* <SubmitQuery></SubmitQuery> */}
             
         </section>
     );

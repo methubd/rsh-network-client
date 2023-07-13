@@ -73,6 +73,9 @@ const Aside = () => {
                     </>
                     
                     }
+
+                    {/* Doctor Routes */}
+                    
                     
                     {/* Admin Routes */}
                     {  isAdmin &&
