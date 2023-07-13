@@ -1,0 +1,58 @@
+.overview-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+
+    background: rgb(59, 59, 59);
+    filter: grayscale(100%);
+    background-image: url('https://www.cbhs.com.au/images/librariesprovider2/default-album/going-to-hospital-featuredimage.tmb-herobanner.jpg?Status=Master&sfvrsn=66fa9978_2');
+    
+    padding: 5rem 8rem;
+    margin: 4rem 0;
+    background-position: 10% 30%;
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
+    background-size: cover;
+
+    /* Paralax */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.overview{
+    color: white;
+    border: .5px solid rgba(255, 255, 255, 0.492);
+    border-radius: 10px;
+    padding: 50px ;
+    text-align: center;
+}
+
+.overview h3{
+    font-size: 38px;
+    font-weight: 400;
+    padding-bottom: 5px;
+}
+
+.overview p{
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 3px;
+}
+
+/* Medium Screen */
+@media screen and (max-width: 992px) {
+    .overview-container{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+}
+
+/* Small Screen */
+@media screen and (max-width: 576px) {
+    .overview-container{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    
+}

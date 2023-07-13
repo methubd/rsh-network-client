@@ -6,6 +6,7 @@ import PremiumButtons from '../../../components/PremiumButtons/PremiumButtons';
 import { Helmet } from 'react-helmet';
 import SectionTitle from '../../../components/SectionTitle/SectionTitle';
 import MedicalDepartments from '../MedicalDepartments/MedicalDepartments';
+import Overview from '../Overview/Overview';
 
 // import ContactInfo from '../../../components/ContactInfo/ContactInfo';
 
@@ -33,6 +34,7 @@ const Home = () => {
                 
                 <div>
                     <Doctors></Doctors>
+                <Overview></Overview>
                 </div>
             </div>
 
