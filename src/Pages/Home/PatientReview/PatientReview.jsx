@@ -15,12 +15,13 @@ import 'swiper/css/navigation';
 // Required modules
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 import { Rating } from '@smastrom/react-rating';
-import { Link } from 'react-router-dom';
+
 
 const PatientReview = () => {
 
     const [reviews, setReviews] = useState(null);
     
+    // TODO: fix the return value error
     const {isLoading: isPtReviewsLoading} = useQuery(['ptReviews'], 
     
     () => {
@@ -75,7 +76,7 @@ const PatientReview = () => {
                     </SwiperSlide>)
                 }
             </Swiper>
-            <Link className='btn-add-review' to="/dashboard/add-review">Add a Review Now</Link>
+            {/* <Link className='btn-add-review' to="/dashboard/add-review">Add a Review Now</Link> */}
         </div>
     );
 };

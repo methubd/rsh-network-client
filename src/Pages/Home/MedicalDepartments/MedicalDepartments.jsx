@@ -33,7 +33,7 @@ const MedicalDepartments = () => {
             const handleResize = () => {
             const windowWidth = window.innerWidth;
             if (windowWidth < 576) {
-                setSlidesPerView(1);
+                setSlidesPerView(2);
             } 
             else if(windowWidth < 992){
                 setSlidesPerView(2);
@@ -64,14 +64,14 @@ const MedicalDepartments = () => {
     
 
     return (
-        <div className='container'>
+        <div className='container fade-in'>
             <SectionTitle
             heading='Medical Departments'
             ></SectionTitle>
 
             <Swiper
                 slidesPerView={slidesPerView}
-                spaceBetween={30}
+                spaceBetween={15}
                 freeMode={true}
                 
                 pagination={{

@@ -18,6 +18,7 @@ import Prescription from "../Pages/Dashboard/Prescription/Prescription";
 import PaymentHistory from "../Pages/Dashboard/PaymentHistory/PaymentHistory";
 import ManageAppointments from "../Pages/Dashboard/ManageAppointments/ManageAppointments";
 import AddReview from "../Pages/Dashboard/AddReview/AddReview";
+import BookHealthPackage from "../Pages/Home/HealthPackages/BookHealthPackage/BookHealthPackage";
 
 const router = createBrowserRouter([
     {
@@ -46,6 +47,12 @@ const router = createBrowserRouter([
           path: '/make-appointment/:id',
           element: <PrivateRoute> <MakeAppointment/> </PrivateRoute>,
           loader: ({params}) => `http://localhost:5000/consultant/${params.id}`
+        },
+        {
+          path: '/book-health-package/:id',
+          element: <PrivateRoute> <BookHealthPackage/> </PrivateRoute>,
+          loader: ({params}) => `http://localhost:5000/health-packages/${params.id}`
+          
         },
         
       ]

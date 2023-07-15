@@ -1,13 +1,14 @@
 import './Home.css'
 import Banner from "../Banner/Banner";
 import Doctors from '../../../components/Doctors/Doctors';
-import SubmitQuery from '../../../components/SubmitQuery/SubmitQuery';
 import PremiumButtons from '../../../components/PremiumButtons/PremiumButtons';
 import { Helmet } from 'react-helmet';
 import SectionTitle from '../../../components/SectionTitle/SectionTitle';
 import MedicalDepartments from '../MedicalDepartments/MedicalDepartments';
 import Overview from '../Overview/Overview';
 import PatientReview from '../PatientReview/PatientReview';
+import HealthPackages from '../HealthPackages/HealthPackages';
+import SubmitQuery from '../../../components/SubmitQuery/SubmitQuery';
 
 // import ContactInfo from '../../../components/ContactInfo/ContactInfo';
 
@@ -25,6 +26,12 @@ const Home = () => {
             <PremiumButtons></PremiumButtons>
             <MedicalDepartments></MedicalDepartments>
 
+            <SectionTitle
+            heading="Health Packages"
+            subHeading="It's very much important for you, if you are health con!"
+            />
+            <HealthPackages></HealthPackages>
+
             {/* Consultants */}
 
             <div className='consultants-container'>
@@ -41,6 +48,8 @@ const Home = () => {
                     subHeading="We are providing world class health service from starting"
                     />
                     <PatientReview></PatientReview>
+                    
+                    <SubmitQuery></SubmitQuery>
                 </div>
             </div>
 

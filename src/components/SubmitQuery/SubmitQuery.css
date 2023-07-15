@@ -4,7 +4,7 @@
     justify-content: center;
     align-items: center;
     margin-top: 5rem;
-    gap: 0rem;    
+    gap: 0rem;
 }
 
 .form-description-container{
@@ -53,6 +53,19 @@
     background-color: rgb(255, 255, 255);
 }
 
+.select-field{
+    width: 100%;
+}
+
+select.appointment-field option {
+    
+  }
+
+.refund-policy{
+    font-size: 12px;
+    text-decoration: none;
+}
+
 /* Medium Screen */
 @media screen and (max-width: 992px) {
 
@@ -67,6 +80,7 @@
     .appointment-body{
         border: none;
         width: fit-content;
+        box-shadow: none;
     }
 
 }

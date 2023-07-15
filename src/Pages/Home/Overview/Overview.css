@@ -27,6 +27,12 @@
     border-radius: 10px;
     padding: 50px ;
     text-align: center;
+    transition: 0.6s;
+}
+
+.overview:hover{
+    border: .5px solid rgba(201, 29, 29, 0.492);
+    cursor: pointer;
 }
 
 .overview h3{

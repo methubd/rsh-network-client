@@ -11,8 +11,8 @@ const SubmitQuery = () => {
         <section className="appointment-container container">
             <div className='form-description-container'>
                 <img className='company-logo' src="https://i.ibb.co/k8qL7Jf/logo.png" alt="" />
-                <h1 className='form-heading'>Share <br /> Your Query <br /> with <br />Our Best Team</h1>
-                <p>Within 24hrs we will answer<br />your query. <br />Don’t hesitate, contact us for <br /> better help and services</p>
+                <h1 className='form-heading'>Share Your Query <br /> with Our Best Team</h1>
+                <p>Within 24hrs we will answer your query. <br />Don’t hesitate, contact us for <br /> better help and services</p>
             </div>
             <div className='appointment-body'>
                 <form className='field-body' onSubmit={handleSubmitQuery}>
