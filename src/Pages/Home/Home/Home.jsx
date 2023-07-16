@@ -9,6 +9,10 @@ import Overview from '../Overview/Overview';
 import PatientReview from '../PatientReview/PatientReview';
 import HealthPackages from '../HealthPackages/HealthPackages';
 import SubmitQuery from '../../../components/SubmitQuery/SubmitQuery';
+import OurPartners from '../OurPartners/OurPartners';
+import AppointmentBookBanner from '../AppointmentBookBanner/AppointmentBookBanner';
+
+
 
 // import ContactInfo from '../../../components/ContactInfo/ContactInfo';
 
@@ -24,32 +28,35 @@ const Home = () => {
             {/* <ContactInfo></ContactInfo> */}
             <Banner></Banner>
             <PremiumButtons></PremiumButtons>
+            <SectionTitle 
+                heading="Team Of Consultants"
+                subHeading="Quality consultation server is our commitment"
+                />
+            <Doctors></Doctors>            
             <MedicalDepartments></MedicalDepartments>
-
+            <SectionTitle 
+                    heading="Whats our patients saying"
+                    subHeading="We are providing world class health service from starting"
+                    />
+            <PatientReview></PatientReview>
+            <OurPartners></OurPartners>
             <SectionTitle
             heading="Health Packages"
             subHeading="It's very much important for you, if you are health con!"
             />
             <HealthPackages></HealthPackages>
+            <AppointmentBookBanner></AppointmentBookBanner>
 
             {/* Consultants */}
 
             <div className='consultants-container'>
-                <SectionTitle 
-                heading="Team Of Consultants"
-                subHeading="Quality consultation server is our commitment"
-                />
+                
                 
                 <div>
-                    <Doctors></Doctors>
-                    <Overview></Overview>
-                    <SectionTitle 
-                    heading="Whats our patients saying"
-                    subHeading="We are providing world class health service from starting"
-                    />
-                    <PatientReview></PatientReview>
                     
+                    <Overview></Overview>
                     <SubmitQuery></SubmitQuery>
+                    
                 </div>
             </div>
 

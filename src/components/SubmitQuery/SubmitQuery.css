@@ -42,6 +42,13 @@
     padding-right: 18px;
 }
 
+.appointment-field-group{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
 .appointment-field{
     border: 1px solid rgb(214, 214, 214);
     outline: none;
@@ -54,12 +61,29 @@
 }
 
 .select-field{
-    width: 100%;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: 1px solid rgb(214, 214, 214);
+    font-size: 14px;
+    color: var(--description-color);
+    margin-bottom: 10px;
+    outline: none;
 }
 
-select.appointment-field option {
-    
-  }
+.date-field{
+    width: 315px;
+    color: var(--description-color);
+}
+
+select.select-field option {
+    padding: 10px !important;
+    margin-top: 5px !important;
+    font-size: 16px;
+    width: fit-content;
+}
 
 .refund-policy{
     font-size: 12px;

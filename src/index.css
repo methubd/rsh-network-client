@@ -119,5 +119,9 @@
         margin-top: 5px;
     }
 
+    .body-border:hover{
+        border: none;
+    }
+
 }
 

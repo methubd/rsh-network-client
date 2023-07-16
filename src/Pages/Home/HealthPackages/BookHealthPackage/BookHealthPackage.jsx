@@ -42,7 +42,9 @@ const BookHealthPackage = () => {
         const ptAge = form.age.value;
         const ptNumber = form.contact.value;
         const totalPrice = collectionCharge + selectedPackage.price;
-        const newHealthPackageBooking = {ptName, ptAge, ptNumber, totalPrice};        
+        const newHealthPackageBooking = {ptName, ptAge, ptNumber, totalPrice};
+        console.log(newHealthPackageBooking);
+        
     }
 
     return (

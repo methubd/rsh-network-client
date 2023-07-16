@@ -1,0 +1,25 @@
+.partners-container{
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+}
+
+.partner{
+    border: 1px solid rgb(192, 192, 192);
+    padding: 5px 80px;
+    border-radius: 3px;
+    width: 70px;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.partner p {
+    font-size: 12px;
+}
+
+.partner-logo{
+    width: 100%;
+    border-radius: 5px;
+}

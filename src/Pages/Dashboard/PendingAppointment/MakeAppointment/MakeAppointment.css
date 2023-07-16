@@ -18,14 +18,14 @@
 
 .doctor-fee{
     text-align: center;
-    font-size: 14px;
+    font-size: 12px;
     color: rgb(140, 140, 140);
     /* background-color: rgb(226, 226, 226);
     padding: 5px; */
 }
 
 .doctor-head{
-    color: var(--secondary-color);
+    color: var(--primary-color);
     font-weight: 700;
 }
 
