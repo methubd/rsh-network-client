@@ -10,6 +10,8 @@ const AuthProvider = ({children}) => {
     const [user, setUser] = useState(true);
     const [loader, setLoader] = useState(true)
 
+    
+
     const signInWithPassword = (email, password) => {
         setLoader(false)
         return signInWithEmailAndPassword(auth, email, password);
@@ -55,6 +57,7 @@ const AuthProvider = ({children}) => {
     //User Observer
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, currentUser => {
+            setLoader(true)
             setUser(currentUser);
 
             console.log("Current User:", currentUser? currentUser.displayName : 'No User');
@@ -84,6 +87,8 @@ const AuthProvider = ({children}) => {
             return unsubscribe();
         }
     }, [])
+
+
 
     return (
         <AuthContext.Provider value={authInfo}>

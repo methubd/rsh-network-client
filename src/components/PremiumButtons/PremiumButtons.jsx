@@ -21,17 +21,21 @@ const PremiumButtons = () => {
             content: []
         }
         
-        axios.post(`http://localhost:5000/chats/${user?.email}`, newMessageBox)
-        .then(data => {
+        // for undefine user barrigate
+        if(user?.email){
+
+            axios.post(`https://rsh-network-server.vercel.app/chats/${user?.email}`, newMessageBox)
+            .then(data => {
             if(data.data.success === 200){
                 Swal.fire(`Hey, ${user?.displayName}, We are happy to see you again!`)
                 return
             }
             else{
                 Swal.fire(`Hey, ${user?.displayName}, Welcome to our Emergency Department`)
-            }
-            
+            }            
         })
+
+        }
     }
 
     return (

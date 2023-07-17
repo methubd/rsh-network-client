@@ -9,7 +9,7 @@ const LiveChat = () => {
 
     const {data: userMessages = [], refetch, isLoading: isUserMessageLoading} = useQuery(['userMessages'], 
     async () => {
-        const res = await axios.get(`http://localhost:5000/chats/${user?.email}`)
+        const res = await axios.get(`https://rsh-network-server.vercel.app/chats/${user?.email}`)
         return res.data;
     }
     )
@@ -29,7 +29,7 @@ const LiveChat = () => {
             patientMsg: message,
           };
 
-        axios.post(`http://localhost:5000/chat-update/${user?.email}`, newMessage)
+        axios.post(`https://rsh-network-server.vercel.app/chat-update/${user?.email}`, newMessage)
         .then(data => {
             console.log(data);
             form.reset();
@@ -69,7 +69,7 @@ const LiveChat = () => {
 
                     <div className="message sent">
                         <div className="content">
-                            <p>Doctor is now on offline, please write your query we will send get back to you very soon!</p>
+                            <p>Hey, {user?.displayName}, How are you? our Doctor is now on offline, please write your query we will send get back to you very soon!</p>
                             <hr className='sender-top-line' />
                             <span className="sender">Dr. Rafiqul Islam</span>
                         </div>
