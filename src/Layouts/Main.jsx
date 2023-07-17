@@ -8,11 +8,13 @@ const Main = () => {
 
     const noHeaderFooter = location.pathname.includes('/signup') || location.pathname.includes('/signin');
 
+    const noFooter = location.pathname.includes('/make-appointment') || location.pathname.includes('/live-chat') ;
+
     return (
         <div>
-            {noHeaderFooter || <Navbar></Navbar>}
+            {noHeaderFooter ||  <Navbar></Navbar>}
             <Outlet></Outlet>
-            {noHeaderFooter || <Footer></Footer>}
+            {noHeaderFooter || noFooter || <Footer></Footer>}
         </div>
     );
 };

@@ -1,14 +1,44 @@
 import { ChatBubbleBottomCenterIcon, DocumentCheckIcon, BuildingStorefrontIcon, HeartIcon } from "@heroicons/react/24/solid";
 import './PremiumButtons.css'
+import { Link } from "react-router-dom";
+import useAuth from "../../Hooks/useAuth";
+import axios from "axios";
+import Swal from "sweetalert2";
+import Loading from "../Loading/Loading";
 
 
 const PremiumButtons = () => {
+    const {user, loading} = useAuth();
+
+    if(loading){
+        return <Loading/>
+    }
+
+    const handleCreateChatBox = () => {
+        const newMessageBox = {
+            senderEmail: user?.email, 
+            senderName: user?.displayName,
+            content: []
+        }
+        
+        axios.post(`http://localhost:5000/chats/${user?.email}`, newMessageBox)
+        .then(data => {
+            if(data.data.success === 200){
+                Swal.fire(`Hey, ${user?.displayName}, We are happy to see you again!`)
+                return
+            }
+            else{
+                Swal.fire(`Hey, ${user?.displayName}, Welcome to our Emergency Department`)
+            }
+            
+        })
+    }
 
     return (
         <div className='premium-btn-container container'>
 
-                <div className='single-btn-container'>
-                    <button className='btn-premium-chat'> <ChatBubbleBottomCenterIcon className='btn-icons'/>LIVE CHAT<br />with Doctor</button>
+                <div onClick={handleCreateChatBox} className='single-btn-container'>
+                    <Link to='/live-chat' className="btn-text-style btn-premium-chat"> <ChatBubbleBottomCenterIcon className='btn-icons'/> LIVE CHAT<br />with Doctor</Link>
                     <p className='btn-description'>20 Minute Consultation is Free, you may try your first Consultation</p>
                 </div>
 

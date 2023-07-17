@@ -59,6 +59,8 @@
 @media screen and (max-width: 576px) {
     .overview-container{
         grid-template-columns: repeat(1, 1fr);
+        text-align: center;
+        padding: 30px;
     }
     
 }

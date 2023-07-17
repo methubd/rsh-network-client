@@ -46,7 +46,9 @@
     display: flex;
     gap: 10px;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    width: 80%;
+    margin: auto;
 }
 
 .appointment-field{
@@ -62,6 +64,7 @@
 
 .select-field{
     width: 80%;
+    margin: auto;
     display: flex;
     flex-direction: column;
     padding: 10px 15px;
@@ -69,12 +72,13 @@
     border: 1px solid rgb(214, 214, 214);
     font-size: 14px;
     color: var(--description-color);
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
     outline: none;
+    
 }
 
 .date-field{
-    width: 315px;
+    width: 316px;
     color: var(--description-color);
 }
 
@@ -94,7 +98,8 @@ select.select-field option {
 @media screen and (max-width: 992px) {
 
     .appointment-container{
-        flex-direction: column;   
+        flex-direction: column;  
+         
     }
 
     .form-description-container{
@@ -103,8 +108,32 @@ select.select-field option {
 
     .appointment-body{
         border: none;
-        width: fit-content;
+        width: 90%;
         box-shadow: none;
+        padding: 0;
     }
 
+    .date-field{
+
+    }
+
+}
+
+@media screen and (max-width: 576px){
+    .appointment-field-group{
+        
+    }
+    .form-description-container{
+        
+    }
+
+    .appointment-body{
+        width: 90%;
+        text-align: center;
+    }
+
+    .date-field{
+        /* width: 336px; */
+        width: 100%;
+    }
 }

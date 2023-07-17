@@ -75,7 +75,7 @@ const MakeAppointment = () => {
             doctorFee, 
             status: "Pending"};
 
-        axios.post('http://localhost:5000/appointments', newAppointment)
+        axios.post('https://rsh-network-server.vercel.app/appointments', newAppointment)
         .then(data => {
             if(data.status === 200){
                 Swal.fire({

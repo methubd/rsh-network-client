@@ -25,7 +25,7 @@ const PatientReview = () => {
     const {isLoading: isPtReviewsLoading} = useQuery(['ptReviews'], 
     
     () => {
-        axios.get('http://localhost:5000/patient-review')
+        axios.get('https://rsh-network-server.vercel.app/patient-review')
         .then((response) => {
             setReviews(response.data)
         })

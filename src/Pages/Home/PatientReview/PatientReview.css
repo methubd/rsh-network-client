@@ -29,6 +29,7 @@
     padding: 1rem 0;
     width: 80%;
     margin: auto;
+    font-family: 'Hind Siliguri';
 }
 
 .review-patient-info h4 {
@@ -43,6 +44,7 @@
 .review-patient-info p{
     margin-top: -14px;
     font-size: 13px;
+    font-weight: 400;
 }
 
 .btn-add-review{
@@ -54,3 +56,4 @@
     border-radius: 5px;
     font-weight: 600;
 }
+

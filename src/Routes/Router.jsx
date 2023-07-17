@@ -19,6 +19,7 @@ import PaymentHistory from "../Pages/Dashboard/PaymentHistory/PaymentHistory";
 import ManageAppointments from "../Pages/Dashboard/ManageAppointments/ManageAppointments";
 import AddReview from "../Pages/Dashboard/AddReview/AddReview";
 import BookHealthPackage from "../Pages/Home/HealthPackages/BookHealthPackage/BookHealthPackage";
+import LiveChat from "../Pages/LiveChat/LiveChat";
 
 const router = createBrowserRouter([
     {
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
         {
             path: '/',
             element: <Home></Home>
+        },
+        {
+          path: '/live-chat',
+          element: <PrivateRoute> <LiveChat></LiveChat> </PrivateRoute>
         },
         {
             path: 'doctors',
@@ -46,12 +51,12 @@ const router = createBrowserRouter([
         {
           path: '/make-appointment/:id',
           element: <PrivateRoute> <MakeAppointment/> </PrivateRoute>,
-          loader: ({params}) => `http://localhost:5000/consultant/${params.id}`
+          loader: ({params}) => `https://rsh-network-server.vercel.app/consultant/${params.id}`
         },
         {
           path: '/book-health-package/:id',
           element: <PrivateRoute> <BookHealthPackage/> </PrivateRoute>,
-          loader: ({params}) => `http://localhost:5000/health-packages/${params.id}`
+          loader: ({params}) => `https://rsh-network-server.vercel.app/health-packages/${params.id}`
           
         },
         
@@ -68,7 +73,7 @@ const router = createBrowserRouter([
         {
           path: '/dashboard/add-consultant/:id',
           element: <PrivateRoute><AddConsultant></AddConsultant></PrivateRoute>, 
-          loader: async ({params}) => await `http://localhost:5000/users/${params.id}`
+          loader: async ({params}) => await `https://rsh-network-server.vercel.app/users/${params.id}`
         },
         {
           path: '/dashboard/pending-appointment',
