@@ -5,10 +5,13 @@ import './Aside.css'
 import useAdmin from '../../../Hooks/useAdmin';
 import useAuth from '../../../Hooks/useAuth';
 import { useState } from 'react';
+import useDoctor from '../../../Hooks/useDoctor';
 
 const Aside = () => {
     const {user, logOut} = useAuth();
     const [isAdmin] = useAdmin();
+    const [isDoctor] = useDoctor();
+    console.log('doctor-',isDoctor);
     const [dbMenu, setDBMenu] = useState(false);
 
     const handleMenu = () => {
