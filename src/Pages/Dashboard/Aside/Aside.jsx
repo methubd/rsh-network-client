@@ -1,4 +1,4 @@
-import { ArrowLeftIcon, HomeIcon, UserGroupIcon, UserCircleIcon, TableCellsIcon, BanknotesIcon, CurrencyBangladeshiIcon , Bars3Icon, XMarkIcon, HandThumbUpIcon } from '@heroicons/react/24/solid'
+import { ArrowLeftIcon, HomeIcon, UserGroupIcon, UserCircleIcon, TableCellsIcon, BanknotesIcon, CurrencyBangladeshiIcon , Bars3Icon, XMarkIcon, HandThumbUpIcon, ChatBubbleBottomCenterIcon } from '@heroicons/react/24/solid'
 
 import { Link } from 'react-router-dom';
 import './Aside.css'
@@ -11,7 +11,8 @@ const Aside = () => {
     const {user, logOut} = useAuth();
     const [isAdmin] = useAdmin();
     const [isDoctor] = useDoctor();
-    console.log('doctor-',isDoctor);
+    console.log(isDoctor);
+
     const [dbMenu, setDBMenu] = useState(false);
 
     const handleMenu = () => {
@@ -26,58 +27,73 @@ const Aside = () => {
                    
             <div>
 
-                <div className='dashboard-menu-expand'>
-                    
-                    { 
-                    
+                <div className='dashboard-menu-expand'>                    
+                    {                    
                     dbMenu ?
                     <XMarkIcon onClick={() => handleMenu(setDBMenu(!dbMenu))} className='dashboard-expand-icon'/> 
                         :
-                    <Bars3Icon onClick={() => handleMenu (setDBMenu(!dbMenu))} className='dashboard-expand-icon'/>
-                    
+                    <Bars3Icon onClick={() => handleMenu (setDBMenu(!dbMenu))} className='dashboard-expand-icon'/>                    
                     }
-
                 </div>
 
                 {dbMenu &&
                     <aside> 
 
                     {/* User Routes */}
-                    { user && isAdmin ||
-                        
+                    { user && isAdmin || isDoctor ||                        
                     <>
-                    <Link className='dashboard-btn btn-with-icon' to='/'> 
-                    <HomeIcon className='dashboard-menu-icon'/> Home
-                    </Link>
-                    
-                    <Link className='dashboard-btn btn-with-icon' to='/dashboard/prescription'>
-                    <TableCellsIcon className='dashboard-menu-icon'/> Prescription
-                    </Link>
+                        <Link className='dashboard-btn btn-with-icon' to='/'> 
+                        <HomeIcon className='dashboard-menu-icon'/> Home
+                        </Link>
+                        
+                        <Link className='dashboard-btn btn-with-icon' to='/dashboard/prescription'>
+                        <TableCellsIcon className='dashboard-menu-icon'/> Prescription
+                        </Link>
 
-                    <Link className='dashboard-btn btn-with-icon' to='/dashboard/pending-appointment'>
-                    <CurrencyBangladeshiIcon className='dashboard-menu-icon'/> Pending Service
-                    </Link>
+                        <Link className='dashboard-btn btn-with-icon' to='/dashboard/pending-appointment'>
+                        <CurrencyBangladeshiIcon className='dashboard-menu-icon'/> Pending Service
+                        </Link>
 
-                    <hr className='hr-line' />
+                        <hr className='hr-line' />
 
-                    <Link className='dashboard-btn btn-with-icon' to='/dashboard/payment-history'> 
-                    <BanknotesIcon className='dashboard-menu-icon'/> Payment History
-                    </Link>
+                        <Link className='dashboard-btn btn-with-icon' to='/dashboard/payment-history'> 
+                        <BanknotesIcon className='dashboard-menu-icon'/> Payment History
+                        </Link>
 
-                    <Link className='dashboard-btn btn-with-icon' to='/dashboard/update-profile'> 
-                    <UserCircleIcon className='dashboard-menu-icon'/>Update Profile
-                    </Link>
+                        <Link className='dashboard-btn btn-with-icon' to='/dashboard/update-profile'> 
+                        <UserCircleIcon className='dashboard-menu-icon'/>Update Profile
+                        </Link>
 
-                    <Link className='dashboard-btn btn-with-icon' to='/dashboard/add-review'> 
-                    <HandThumbUpIcon className='dashboard-menu-icon'/>Add your Review
-                    </Link>
+                        <Link className='dashboard-btn btn-with-icon' to='/dashboard/add-review'> 
+                        <HandThumbUpIcon className='dashboard-menu-icon'/>Add your Review
+                        </Link> 
 
-                    <hr className='hr-line' />
+                        <hr className='hr-line' />
                     </>
                     
                     }
 
                     {/* Doctor Routes */}
+                    { isDoctor &&
+                    
+                    <>
+                        <Link className='dashboard-btn btn-with-icon' to='/'> 
+                        <HomeIcon className='dashboard-menu-icon'/> Home
+                        </Link>
+
+                        <Link className='dashboard-btn btn-with-icon' to='/dashboard/my-appointments'>
+                        <TableCellsIcon className='dashboard-menu-icon'/>My Appointments
+                        </Link>
+
+                        <Link className='dashboard-btn btn-with-icon' to='/dashboard/update-profile'> 
+                        <UserCircleIcon className='dashboard-menu-icon'/>Update Profile
+                        </Link>
+
+                        <Link className='dashboard-btn btn-with-icon' to='/dashboard/chat-response'> 
+                        <ChatBubbleBottomCenterIcon className='dashboard-menu-icon'/>Chats
+                        </Link>
+                    </>
+                    }
                     
                     
                     {/* Admin Routes */}
@@ -87,8 +103,16 @@ const Aside = () => {
                         <HomeIcon className='dashboard-menu-icon'/> Home
                         </Link>
 
+                        <Link className='dashboard-btn btn-with-icon' to='/dashboard/update-profile'> 
+                        <ChatBubbleBottomCenterIcon className='dashboard-menu-icon'/>Chats
+                        </Link>
+
                         <Link className='dashboard-btn btn-with-icon' to='/dashboard/manage-appointments'>
                         <UserGroupIcon className='dashboard-menu-icon'/>Manage Appointments
+                        </Link>
+
+                        <Link className='dashboard-btn btn-with-icon' to='/dashboard/manage-appointments'>
+                        <UserGroupIcon className='dashboard-menu-icon'/>Add Health Package
                         </Link>
 
                         <Link className='dashboard-btn btn-with-icon' to='/dashboard/manage-consultant'>
@@ -98,8 +122,6 @@ const Aside = () => {
                         <Link className='dashboard-btn btn-with-icon' to='/dashboard/manage-users'>
                         <UserGroupIcon className='dashboard-menu-icon'/>Manage Users
                         </Link>
-
-                        
 
                         <hr className='hr-line' />
                     </>

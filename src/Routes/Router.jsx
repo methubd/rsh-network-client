@@ -1,7 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../Layouts/Main";
 import Home from "../Pages/Home/Home/Home";
-
 import AllDoctors from "../Pages/AllDoctors/AllDoctors";
 import SignUp from "../Pages/SignUp/SignUp";
 import SignIn from "../Pages/SignIn/SignIn";
@@ -20,6 +19,8 @@ import ManageAppointments from "../Pages/Dashboard/ManageAppointments/ManageAppo
 import AddReview from "../Pages/Dashboard/AddReview/AddReview";
 import BookHealthPackage from "../Pages/Home/HealthPackages/BookHealthPackage/BookHealthPackage";
 import LiveChat from "../Pages/LiveChat/LiveChat";
+import MyAppointments from "../Pages/Dashboard/MyAppointments/MyAppointments";
+import ChatResponse from "../Pages/Dashboard/ChatResponse/ChatResponse";
 
 const router = createBrowserRouter([
     {
@@ -47,7 +48,7 @@ const router = createBrowserRouter([
           element: <SignUp></SignUp>
         },
         
-        // Private Route with ID
+        // Private Routes with ID
         {
           path: '/make-appointment/:id',
           element: <PrivateRoute> <MakeAppointment/> </PrivateRoute>,
@@ -58,36 +59,25 @@ const router = createBrowserRouter([
           element: <PrivateRoute> <BookHealthPackage/> </PrivateRoute>,
           loader: ({params}) => `https://rsh-network-server.vercel.app/health-packages/${params.id}`
           
-        },
-        
+        },        
       ]
     },
+    
     {
       path: '/dashboard',
       element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
       children: [
+        
+        // User Routes
         {
           path: '/dashboard/',
           element: <DashboardHome></DashboardHome>
         },
-        {
-          path: '/dashboard/add-consultant/:id',
-          element: <PrivateRoute><AddConsultant></AddConsultant></PrivateRoute>, 
-          loader: async ({params}) => await `https://rsh-network-server.vercel.app/users/${params.id}`
-        },
+
         {
           path: '/dashboard/pending-appointment',
           element: <PendingAppointment/>
         },
-
-        {
-          path: '/dashboard/manage-users',
-          element: <ManageUsers></ManageUsers>
-        },
-        {
-          path: '/dashboard/manage-consultant',
-          element: <ManageConsultant></ManageConsultant>
-        }, 
         {
           path: '/dashboard/update-profile',
           element: <PrivateRoute><UpdateProfile></UpdateProfile></PrivateRoute>
@@ -100,14 +90,42 @@ const router = createBrowserRouter([
           path: '/dashboard/payment-history',
           element: <PrivateRoute> <PaymentHistory></PaymentHistory> </PrivateRoute>
         }, 
+        
+        {
+          path: '/dashboard/add-review',
+          element: <PrivateRoute> <AddReview></AddReview> </PrivateRoute>
+        },
+
+        // Admin Routes
         {
           path: '/dashboard/manage-appointments',
           element: <PrivateRoute> <ManageAppointments></ManageAppointments> </PrivateRoute>
         }, 
         {
-          path: '/dashboard/add-review',
-          element: <PrivateRoute> <AddReview></AddReview> </PrivateRoute>
-        }
+          path: '/dashboard/manage-users',
+          element: <ManageUsers></ManageUsers>
+        },
+        {
+          path: '/dashboard/manage-consultant',
+          element: <ManageConsultant></ManageConsultant>
+        }, 
+
+        {
+          path: '/dashboard/add-consultant/:id',
+          element: <PrivateRoute><AddConsultant></AddConsultant></PrivateRoute>, 
+          loader: async ({params}) => await `https://rsh-network-server.vercel.app/users/${params.id}`
+        },
+
+        // Doctor Routes
+        {
+          path: '/dashboard/my-appointments',
+          element: <PrivateRoute> <MyAppointments></MyAppointments> </PrivateRoute>
+        },
+        {
+          path: '/dashboard/chat-response',
+          element: <PrivateRoute> <ChatResponse></ChatResponse> </PrivateRoute>
+        },
+
       ]
     }
   ]);
