@@ -22,15 +22,17 @@ const DoctorProfile = () => {
                     </div>
                 </div>
                 
-                <div className='experiences'>
+                <div className='experiences '>
                     <p className='doc-info-data-field'>35 Years Experience</p>
                     <p className='doc-info-data-field'>Fee: {consultationFee}</p>
                     <p className='doc-info-data-field'>Ratings: 
-                    <Rating className=''
-                    style={{ maxWidth: 100 }}
-                    value={ratings}
-                    readOnly
-                />
+                    <div className='doctor-ratings'>
+                        <Rating className='doctor-ratings'
+                        style={{ maxWidth: 100, }}
+                        value={ratings}
+                        readOnly
+                        />
+                    </div>
                     <button className='btn-add-review'>Add Review</button>
                     </p>
                 </div>

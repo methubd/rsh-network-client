@@ -67,12 +67,19 @@
     font-weight: 700;
 }
 
+.experiences{
+    /* background-color: antiquewhite; */
+    /* text-align: center; */
+    width: 300px;
+    margin: auto; 
+}
+
 .doc-info-data-field{
     border: 1px solid var(--secondary-low);
-    width: 300px;
     padding: 8px 10px;
     font-size: 16px;
-    font-weight: 700;    
+    font-weight: 700;   
+    
 }
 
 .divide-line{
@@ -130,6 +137,10 @@
         gap: 10px;
     }
 
+    .divide-line{
+        margin: 30px 100px;
+    }
+
     /* Experience Section */
 
     .doc-detail-info-container{
@@ -139,6 +150,19 @@
     .about-info{
         width: 90%;
         margin: auto;
+    }
+
+    .experiences{
+        width: 100%;
+        text-align: center;
+        margin: auto; 
+    }
+
+    .doctor-ratings{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 5px;
     }
     
 }
