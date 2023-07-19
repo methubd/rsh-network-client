@@ -62,7 +62,7 @@ const AuthProvider = ({children}) => {
 
             if(currentUser){
 
-                fetch('http://localhost:5000/jwt', {
+                fetch('https://rsh-network-server.vercel.app/jwt', {
                     method: 'POST', 
                     headers: {
                         'content-type': 'application/json'

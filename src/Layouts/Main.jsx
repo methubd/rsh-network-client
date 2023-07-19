@@ -8,7 +8,7 @@ const Main = () => {
 
     const noHeaderFooter = location.pathname.includes('/signup') || location.pathname.includes('/signin');
 
-    const noFooter = location.pathname.includes('/make-appointment') || location.pathname.includes('/live-chat') ;
+    const noFooter = location.pathname.includes('/make-appointment') || location.pathname.includes('/live-chat') || location.pathname.includes('/doctor-profile') ;
 
     return (
         <div>

@@ -1,18 +1,23 @@
+import { Suspense, lazy } from 'react';
 import { Outlet } from "react-router-dom";
-import Aside from "../Pages/Dashboard/Aside/Aside";
+const AsideBar = lazy(() => import("../Pages/Dashboard/Aside/Aside"))
 import './Dashboard.css'
-import Footer from "../Pages/Shared/Footer/Footer";
+
+import Loading from '../components/Loading/Loading';
 
 
 const Dashboard = () => {
-    // https://www.instagram.com/mcgeewealth/ try this one as dashboard
     return (
         <div className="">
             <div className="dashboard-container">
-            <Aside></Aside>
+            {/* Lazy Load */}
+            <Suspense fallback={<Loading />}>
+            <AsideBar/>
             <Outlet></Outlet>
+            </Suspense>
+
             </div>
-            <Footer></Footer>
+            {/* <Footer></Footer> */}
         </div>
     );
 };

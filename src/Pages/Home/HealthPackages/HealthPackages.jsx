@@ -22,7 +22,7 @@ const HealthPackages = () => {
             
         const {data: healthPackages = [], isLoading: isHealthPackagesLoading} = useQuery(['healthPackages'], 
         async () => {
-            const res = await axios.get('http://localhost:5000/health-packages');
+            const res = await axios.get('https://rsh-network-server.vercel.app/health-packages');
             return res.data;
         }
         )

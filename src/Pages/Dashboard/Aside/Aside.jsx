@@ -104,7 +104,7 @@ const Aside = () => {
                         <HomeIcon className='dashboard-menu-icon'/> Home
                         </Link>
 
-                        <Link className='dashboard-btn btn-with-icon' to='/dashboard/update-profile'> 
+                        <Link className='dashboard-btn btn-with-icon' to='/dashboard/chat-response'> 
                         <ChatBubbleBottomCenterIcon className='dashboard-menu-icon'/>Chats
                         </Link>
 

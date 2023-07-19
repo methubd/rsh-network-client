@@ -1,16 +1,39 @@
 .chat-res-container{
-    background-color: var(--secondary-low);
-    width: 88%;
-    min-height: 500px;
+    background-color: var(--primary-low);
+    /* width: 88%; */
     padding: 30px;
     margin: -10px auto;
-
     display: flex;
-    gap: 1rem
+    gap: 3rem
 }
 
 .participants{
     display: flex;
     flex-direction: column;
+    background-color: rgb(255, 249, 249);
+    border-radius: 10px;
+    padding: 30px;
     gap: 1rem;
+}
+
+.participant{
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--secondary-low);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.participant-name{
+    text-decoration: none;
+    
+    color: black;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.participant:hover{
+    background-color: var(--secondary-low);
+    color: var(--description-color);
 }

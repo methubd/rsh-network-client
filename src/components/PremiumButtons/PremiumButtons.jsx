@@ -9,7 +9,6 @@ import Loading from "../Loading/Loading";
 
 const PremiumButtons = () => {
     const {user, loading} = useAuth();
-
     if(loading){
         return <Loading/>
     }
@@ -17,6 +16,7 @@ const PremiumButtons = () => {
     const handleCreateChatBox = () => {
         const newMessageBox = {
             senderEmail: user?.email, 
+            senderPhoto: user? user.photoURL : "https://img.freepik.com/free-icon/user_318-563642.jpg?w=360",
             senderName: user?.displayName,
             content: []
         }
@@ -24,7 +24,7 @@ const PremiumButtons = () => {
         // for undefine user barrigate
         if(user?.email){
 
-            axios.post(`http://localhost:5000/chats/${user?.email}`, newMessageBox)
+            axios.post(`https://rsh-network-server.vercel.app/chats/${user?.email}`, newMessageBox)
             .then(data => {
             if(data.data.success === 200){
                 Swal.fire(`Hey, ${user?.displayName}, We are happy to see you again!`)

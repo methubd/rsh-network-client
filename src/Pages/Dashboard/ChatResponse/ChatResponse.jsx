@@ -9,7 +9,7 @@ const ChatResponse = () => {
 
     const {data: chatParticipats = [], isLoading: isChatParticipantsLoading} = useQuery(['chatParticipats'], 
     async () => {
-        const res = await axios.get('http://localhost:5000/chat-response')
+        const res = await axios.get('https://rsh-network-server.vercel.app/chat-response')
         return res.data
     }
     )
@@ -17,8 +17,6 @@ const ChatResponse = () => {
     if(isChatParticipantsLoading){
         return <Loading/>
     }
-
-    console.log(chatParticipats);
 
     return (
         <div className='add-consultant-container'>
@@ -31,9 +29,14 @@ const ChatResponse = () => {
 
                 {/* Participats */}
                 <div className='participants'>
-                    <h4>Participants - {chatParticipats?.length}</h4>
                     {
-                        chatParticipats?.map(participant => <Link to={`/dashboard/chat-response/message-box/${participant._id}`} key={participant._id}>{participant?.senderName}</Link>)
+                        chatParticipats?.map((participant, index) => <div className='participant' key={index}>
+                            <img className='profile-picture' src={participant?.senderPhoto} alt="" />
+                            <Link className='participant-name' to={`/dashboard/chat-response/message-box/${participant._id}`}> {participant?.senderName}
+                            </Link>
+                        </div>
+                        
+                        )
                     }
                 </div>
                 

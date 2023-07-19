@@ -25,6 +25,7 @@ import MessageBox from "../Pages/Dashboard/ChatResponse/MessageBox/MessageBox";
 import DoctorProfile from "../Pages/DoctorProfile/DoctorProfile";
 
 
+
 const router = createBrowserRouter([
     {
       path: "/",
@@ -46,7 +47,7 @@ const router = createBrowserRouter([
             path: 'doctor-profile/:id',
             element: <DoctorProfile></DoctorProfile>,
             loader: async ({params}) => {
-              return fetch(`http://localhost:5000/consultant/${params.id}`)
+              return fetch(`https://rsh-network-server.vercel.app/consultant/${params.id}`)
             }
         },
         {
@@ -62,12 +63,12 @@ const router = createBrowserRouter([
         {
           path: '/make-appointment/:id',
           element: <PrivateRoute> <MakeAppointment/> </PrivateRoute>,
-          loader: ({params}) => `http://localhost:5000/consultant/${params.id}`
+          loader: ({params}) => `https://rsh-network-server.vercel.app/consultant/${params.id}`
         },
         {
           path: '/book-health-package/:id',
           element: <PrivateRoute> <BookHealthPackage/> </PrivateRoute>,
-          loader: ({params}) => `http://localhost:5000/health-packages/${params.id}`
+          loader: ({params}) => `https://rsh-network-server.vercel.app/health-packages/${params.id}`
           
         },        
       ]
@@ -76,7 +77,7 @@ const router = createBrowserRouter([
     // Dashboard Layout
     {
       path: '/dashboard',
-      element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
+      element: <PrivateRoute> <Dashboard></Dashboard> </PrivateRoute>,
       children: [
         
         // User Routes
@@ -124,7 +125,7 @@ const router = createBrowserRouter([
         {
           path: '/dashboard/add-consultant/:id',
           element: <PrivateRoute><AddConsultant></AddConsultant></PrivateRoute>, 
-          loader: async ({params}) => await `http://localhost:5000/users/${params.id}`
+          loader: async ({params}) => await `https://rsh-network-server.vercel.app/users/${params.id}`
         },
 
         // Doctor Routes
@@ -141,15 +142,13 @@ const router = createBrowserRouter([
               {
                 path: '/dashboard/chat-response/message-box/:id',
                 element: <MessageBox></MessageBox>,
-                loader: async ({params}) => await `http://localhost:5000/chat-response/${params.id}`
+                loader: async ({params}) => await `https://rsh-network-server.vercel.app/chat-response/${params.id}`
               }
           ]
         },
 
       ]
     },
-    
-    // ChatBox Layout
 
   ]);
 

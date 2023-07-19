@@ -10,7 +10,7 @@ const Doctors = () => {
         
     const {data: consultants = [], isLoading: isConsultantsLoading} = useQuery(['consultants'], 
     async () => {
-        const res = await axios.get('http://localhost:5000/consultants')
+        const res = await axios.get('https://rsh-network-server.vercel.app/consultants')
         return res.data;
     })
 
