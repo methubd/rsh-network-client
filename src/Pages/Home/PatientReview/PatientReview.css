@@ -49,11 +49,14 @@
 
 .btn-add-review{
     text-decoration: none;
-    background-color: var(--primary-color);
+    border: none;
+    background-color: var(--secondary-color);
     color: white;
     padding: 3px 15px;
+    margin: 10px 0;
     font-size: 12px;
     border-radius: 5px;
     font-weight: 600;
+    cursor: pointer;
 }
 

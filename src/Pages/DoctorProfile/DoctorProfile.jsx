@@ -5,9 +5,8 @@ import { Rating } from '@smastrom/react-rating';
 
 const DoctorProfile = () => {
     const doctor = useLoaderData();
-    const {name, bmdc, speciality, degree, designation, consultationFee, chamberDay, image, ratings, videoConsult} = doctor;
+    const {name, speciality, degree, designation, consultationFee, image, ratings} = doctor;
     
-    console.log(doctor);
     return (
         <section className='doc-profile-container fade-in container'>
             <div className='doc-basic-info-container'>
@@ -32,7 +31,7 @@ const DoctorProfile = () => {
                     value={ratings}
                     readOnly
                 />
-                    <button>Add Review</button>
+                    <button className='btn-add-review'>Add Review</button>
                     </p>
                 </div>
             </div>
