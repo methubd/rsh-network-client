@@ -21,7 +21,7 @@ const MedicalDepartments = () => {
 
     const {data: services = [], isLoading: isServicesLoading} = useQuery(['services'], 
     async () => {
-        const res = await axios.get('https://rsh-network-server.vercel.app/feature-services');
+        const res = await axios.get('http://localhost:5000/feature-services');
         return res.data;
     }
     )

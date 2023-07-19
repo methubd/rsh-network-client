@@ -1,7 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import './PatientReview.css'
 import axios from 'axios';
-import { useState } from 'react';
 import Loading from '../../../components/Loading/Loading';
 
 
@@ -19,16 +18,13 @@ import { Rating } from '@smastrom/react-rating';
 
 const PatientReview = () => {
 
-    const [reviews, setReviews] = useState(null);
+    const {data: reviews = [], isLoading: isPtReviewsLoading} = useQuery(['ptReviews'], 
     
-    // TODO: fix the return value error
-    const {isLoading: isPtReviewsLoading} = useQuery(['ptReviews'], 
-    
-    () => {
-        axios.get('https://rsh-network-server.vercel.app/patient-review')
+    async () => {
+        return await axios.get('http://localhost:5000/patient-review')
         .then((response) => {
-            setReviews(response.data)
-        })
+            return response.data;
+        })        
     }
     )
 

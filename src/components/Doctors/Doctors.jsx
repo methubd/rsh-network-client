@@ -5,27 +5,17 @@ import axios from 'axios';
 import Loading from '../Loading/Loading';
 import { Link } from 'react-router-dom';
 import { Rating } from '@smastrom/react-rating';
-import Swal from 'sweetalert2';
 
 const Doctors = () => {
         
     const {data: consultants = [], isLoading: isConsultantsLoading} = useQuery(['consultants'], 
     async () => {
-        const res = await axios.get('https://rsh-network-server.vercel.app/consultants')
+        const res = await axios.get('http://localhost:5000/consultants')
         return res.data;
     })
 
     if(isConsultantsLoading){
         return <Loading></Loading>
-    }
-
-    const handleViewProfile = () => {
-        Swal.fire({
-            icon: 'question',
-            title: 'Curious?',
-            text: 'We promise! ASAP full profile feature will be available for you!',
-            footer: '<a href="/doctors">Make Appointment</a>'
-          })
     }
 
 
@@ -41,7 +31,7 @@ const Doctors = () => {
                 <p className='doc-speciality'>{consultant?.speciality}</p>
                 <p className='doc-speciality'>{consultant?.degree}</p>
                 <p className='chamber-days'>{consultant?.chamberDay}</p>
-                <Link onClick={handleViewProfile} className='btn-doc-profile'> <small>View Full Profile</small> </Link>
+                <Link to={`/doctor-profile/${consultant._id}`} className='btn-doc-profile'> <small>View Full Profile</small> </Link>
                 
                 <Rating className='star-rating'
                     style={{ maxWidth: 100 }}

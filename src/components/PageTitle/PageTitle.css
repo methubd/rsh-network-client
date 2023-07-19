@@ -3,7 +3,7 @@
     object-fit: fill;
     background-repeat: no-repeat;
     background-size: cover;
-    padding: 15rem 10rem;
+    padding: 10rem 10rem;
     min-height: 100px; 
 }
 
@@ -22,9 +22,9 @@
 
 @media screen and (max-width: 992px) {
     .page-title-container{
-        padding: 5rem 5rem;
+        padding: 15rem 5rem;
         min-height: 50px; 
-        background-position: center;
+        background-position: top;
     }
 
     .heading{
@@ -35,5 +35,12 @@
     .sub-heading{
         font-size: 10px;
         width: fit-content;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .page-title-container{
+        padding: 2rem 5rem;
+        
     }
 }

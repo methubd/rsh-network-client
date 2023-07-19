@@ -1,0 +1,147 @@
+.doc-profile-container{
+    margin: 2rem auto;
+}
+
+.doc-basic-info-container{
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    gap: 4rem;
+}
+
+.basic-info-con{
+    display: flex;
+    /* align-items: center; */
+    gap: 2rem;
+}
+
+.profile-picture-con{
+    width: 150px;
+    border: 5px solid var(--primary-low);    
+    border-radius: 50%;
+    margin: auto;
+}
+
+.profile-picture-con img{
+    width: 100%;
+    border-radius: 50%;
+    
+}
+
+.doctor-basic-info{
+
+}
+
+.doctor-basic-info h2{
+    font-size: 20px;
+    font-weight: 700;
+    padding: 5px 0;
+    text-transform: uppercase;
+}
+
+.doctor-basic-info h3{
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--description-color);
+    padding-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.doctor-basic-info p {
+    color: var(--description-color);
+    border: 2px solid var(--secondary-low);
+    max-width: 430px;
+    padding: 5px;
+    font-size: 12px;
+    font-weight: 500;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+
+.doctor-basic-info .avaibility{
+    text-transform: lowercase;
+    border: none;
+    font-size: 11px;
+    padding: 5px 0;
+}
+
+.doctor-basic-info .another-chamber{
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.doc-info-data-field{
+    border: 2px solid var(--secondary-low);
+    width: 300px;
+    padding: 8px 10px;
+    font-size: 16px;
+    font-weight: 700;    
+}
+
+.divide-line{
+    margin: 40px 100px;
+    border: 2px solid var(--primary-low);
+}
+
+/* Experiences Section */
+
+.doc-detail-info-container{
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.about-info{
+    width: 50%;
+}
+
+.about h3{
+    border: 2px solid var(--secondary-low);
+    padding: 14px 14px;
+    font-size: 14px;
+}
+
+.about p{
+    border: 2px solid var(--secondary-low);
+    padding: 14px 14px;
+    font-size: 14px;
+    font-weight: 400; 
+    margin-bottom: 50px; 
+    color: var(--description-color);
+}
+
+.appointment-function h3 {
+    font-size: 24px;
+    font-weight: 500;
+    padding-bottom: 15px;
+}
+
+.appointment-function button {
+    margin: 5px 0;
+}
+
+@media screen and (max-width: 576px) {
+    .doc-basic-info-container{
+        flex-direction: column;
+        width: 90%;
+        margin: auto;
+    }
+
+    .basic-info-con{
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    /* Experience Section */
+
+    .doc-detail-info-container{
+        flex-direction: column;
+    }
+    
+    .about-info{
+        width: 90%;
+        margin: auto;
+    }
+    
+}

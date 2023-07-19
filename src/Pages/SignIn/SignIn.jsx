@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import SocialLogins from "../../components/SocialLogins/SocialLogins";
 import { Helmet } from "react-helmet";
 import useAuth from "../../Hooks/useAuth";
@@ -9,6 +9,10 @@ const SignIn = () => {
 
     const {signInWithPassword} = useAuth();
     const navigate = useNavigate();
+    const location = useLocation();
+
+    const from = location.state?.from?.pathname || "/";
+    console.log(from);
 
     const handleSignIn = event => {
         event.preventDefault();
@@ -20,12 +24,13 @@ const SignIn = () => {
         signInWithPassword(email, password)
         .then((result) => {
             if(result.user){
-                toast.success('Successfully Sign in')
+                toast.success('User Signin Successful.')
             }
-            navigate('/')
+            navigate(from, { replace: true });
         })
         .catch(error => console.log(error.message))
-
+        
+        
     }
 
     return (

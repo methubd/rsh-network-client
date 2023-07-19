@@ -14,7 +14,7 @@ const SocialSignUp = () => {
             const email = loggedUser?.email;
             const newUser = {name, email}
 
-            fetch('https://rsh-network-server.vercel.app/users', {
+            fetch('http://localhost:5000/users', {
                 method: 'POST',
                 headers: {
                     "content-type" : "application/json"

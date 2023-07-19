@@ -12,7 +12,6 @@ const Dashboard = () => {
             <Aside></Aside>
             <Outlet></Outlet>
             </div>
-
             <Footer></Footer>
         </div>
     );

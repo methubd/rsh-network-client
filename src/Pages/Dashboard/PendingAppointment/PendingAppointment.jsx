@@ -24,7 +24,7 @@ const PendingAppointment = () => {
           }).then((result) => {
             if (result.isConfirmed) {
 
-            axios.delete(`https://rsh-network-server.vercel.app/appointments/${id}`)
+            axios.delete(`http://localhost:5000/appointments/${id}`)
             .then(data => {
                 
                 if(data.status === 200) {

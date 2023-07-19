@@ -21,6 +21,9 @@ import BookHealthPackage from "../Pages/Home/HealthPackages/BookHealthPackage/Bo
 import LiveChat from "../Pages/LiveChat/LiveChat";
 import MyAppointments from "../Pages/Dashboard/MyAppointments/MyAppointments";
 import ChatResponse from "../Pages/Dashboard/ChatResponse/ChatResponse";
+import MessageBox from "../Pages/Dashboard/ChatResponse/MessageBox/MessageBox";
+import DoctorProfile from "../Pages/DoctorProfile/DoctorProfile";
+
 
 const router = createBrowserRouter([
     {
@@ -40,6 +43,13 @@ const router = createBrowserRouter([
             element: <AllDoctors></AllDoctors>
         },
         {
+            path: 'doctor-profile/:id',
+            element: <DoctorProfile></DoctorProfile>,
+            loader: async ({params}) => {
+              return fetch(`http://localhost:5000/consultant/${params.id}`)
+            }
+        },
+        {
             path: 'signin',
             element: <SignIn></SignIn>
         },
@@ -52,17 +62,18 @@ const router = createBrowserRouter([
         {
           path: '/make-appointment/:id',
           element: <PrivateRoute> <MakeAppointment/> </PrivateRoute>,
-          loader: ({params}) => `https://rsh-network-server.vercel.app/consultant/${params.id}`
+          loader: ({params}) => `http://localhost:5000/consultant/${params.id}`
         },
         {
           path: '/book-health-package/:id',
           element: <PrivateRoute> <BookHealthPackage/> </PrivateRoute>,
-          loader: ({params}) => `https://rsh-network-server.vercel.app/health-packages/${params.id}`
+          loader: ({params}) => `http://localhost:5000/health-packages/${params.id}`
           
         },        
       ]
     },
-    
+
+    // Dashboard Layout
     {
       path: '/dashboard',
       element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
@@ -113,7 +124,7 @@ const router = createBrowserRouter([
         {
           path: '/dashboard/add-consultant/:id',
           element: <PrivateRoute><AddConsultant></AddConsultant></PrivateRoute>, 
-          loader: async ({params}) => await `https://rsh-network-server.vercel.app/users/${params.id}`
+          loader: async ({params}) => await `http://localhost:5000/users/${params.id}`
         },
 
         // Doctor Routes
@@ -121,13 +132,25 @@ const router = createBrowserRouter([
           path: '/dashboard/my-appointments',
           element: <PrivateRoute> <MyAppointments></MyAppointments> </PrivateRoute>
         },
+        
+        // Chat Response Nested Routes
         {
           path: '/dashboard/chat-response',
-          element: <PrivateRoute> <ChatResponse></ChatResponse> </PrivateRoute>
+          element: <PrivateRoute> <ChatResponse></ChatResponse> </PrivateRoute>,
+          children: [
+              {
+                path: '/dashboard/chat-response/message-box/:id',
+                element: <MessageBox></MessageBox>,
+                loader: async ({params}) => await `http://localhost:5000/chat-response/${params.id}`
+              }
+          ]
         },
 
       ]
-    }
+    },
+    
+    // ChatBox Layout
+
   ]);
 
 export default router;

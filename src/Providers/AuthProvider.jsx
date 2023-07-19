@@ -10,8 +10,6 @@ const AuthProvider = ({children}) => {
     const [user, setUser] = useState(true);
     const [loader, setLoader] = useState(true)
 
-    
-
     const signInWithPassword = (email, password) => {
         setLoader(false)
         return signInWithEmailAndPassword(auth, email, password);
@@ -64,7 +62,7 @@ const AuthProvider = ({children}) => {
 
             if(currentUser){
 
-                fetch('https://rsh-network-server.vercel.app/jwt', {
+                fetch('http://localhost:5000/jwt', {
                     method: 'POST', 
                     headers: {
                         'content-type': 'application/json'
@@ -83,6 +81,7 @@ const AuthProvider = ({children}) => {
             localStorage.removeItem('Access_Token')
             
         })
+
         return () => {
             return unsubscribe();
         }

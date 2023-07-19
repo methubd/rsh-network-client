@@ -1,0 +1,16 @@
+.chat-res-container{
+    background-color: var(--secondary-low);
+    width: 88%;
+    min-height: 500px;
+    padding: 30px;
+    margin: -10px auto;
+
+    display: flex;
+    gap: 1rem
+}
+
+.participants{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}

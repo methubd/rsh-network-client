@@ -11,13 +11,10 @@ const Aside = () => {
     const {user, logOut} = useAuth();
     const [isAdmin] = useAdmin();
     const [isDoctor] = useDoctor();
-    console.log(isDoctor);
 
     const [dbMenu, setDBMenu] = useState(false);
 
-    const handleMenu = () => {
-        
-    }
+    const handleMenu = () => {}
 
     const handleLogout = () => {
         logOut()
@@ -66,6 +63,10 @@ const Aside = () => {
 
                         <Link className='dashboard-btn btn-with-icon' to='/dashboard/add-review'> 
                         <HandThumbUpIcon className='dashboard-menu-icon'/>Add your Review
+                        </Link> 
+
+                        <Link className='dashboard-btn btn-with-icon' to='/live-chat'> 
+                        <ChatBubbleBottomCenterIcon className='dashboard-menu-icon'/>Live Chat
                         </Link> 
 
                         <hr className='hr-line' />

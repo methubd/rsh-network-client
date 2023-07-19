@@ -10,7 +10,7 @@ const LiveChat = () => {
 
     const {data: userMessages = [], refetch, isLoading: isUserMessageLoading} = useQuery(['userMessages'], 
     async () => {
-        const res = await axios.get(`https://rsh-network-server.vercel.app/chats/${user?.email}`)
+        const res = await axios.get(`http://localhost:5000/chats/${user?.email}`)
         return res.data;
     }
     )
@@ -34,7 +34,7 @@ const LiveChat = () => {
             return
         }
         else{
-            axios.post(`https://rsh-network-server.vercel.app/chat-update/${user?.email}`, newMessage)
+            axios.post(`http://localhost:5000/chat-update/${user?.email}`, newMessage)
             .then(data => {
             console.log(data);
             form.reset();
