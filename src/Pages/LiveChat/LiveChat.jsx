@@ -14,9 +14,8 @@ const LiveChat = () => {
         return res.data;
     }
     )
-
     const userMessage = userMessages.map(userMsg => userMsg?.content);
-
+    
     if(isUserMessageLoading){
         return <Loading/>
     }
@@ -62,26 +61,37 @@ const LiveChat = () => {
                 <div className="messages">
                     
                     {
-                        userMessage[0]?.map(uMsg => <div key={uMsg._id} className="message received fade-in">
+                        userMessage[0]?.map((uMsg, index) => <section key={index}>
+
+                            { uMsg?.patientMsg &&
+                            <div className="message received fade-in">
                             <div className="content">
                                 {/* if doctor message not true, only show the patient message */}
-                                { uMsg?.doctorMsg ||
-                                    <p>{uMsg?.patientMsg}</p>
-                                }
+                                <p>{uMsg?.patientMsg}</p>
                                 <hr className='sender-top-line' />
                                 <span className="sender">{user?.displayName}</span>
                             </div>
-                        </div>)
-                        
-                    }                    
+                            </div>
+                            }
 
-                    <div className="message sent">
-                        <div className="content">
-                            <p>Hey, {user?.displayName}, How are you? our Doctor is now on offline, please write your query we will send get back to you very soon!</p>
-                            <hr className='sender-top-line' />
-                            <span className="sender">Customer Support Team</span>
-                        </div>
-                    </div>
+                            <div className='msg-author'>
+                                { uMsg?.doctorMsg &&
+                                <div className="message sent">
+                                <div className="content">
+                                <p>{uMsg?.doctorMsg}</p>
+                                    <hr className='sender-top-line' />
+                                    <span className="sender">{uMsg?.msgSender}</span>
+                                </div>
+                                </div>
+                                }
+                            </div>
+                        
+                        </section>)
+                        
+                    }
+
+                        
+                    
                     
                     {/* Add more message elements here */}
                 </div>

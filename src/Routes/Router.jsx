@@ -21,7 +21,6 @@ import BookHealthPackage from "../Pages/Home/HealthPackages/BookHealthPackage/Bo
 import LiveChat from "../Pages/LiveChat/LiveChat";
 import MyAppointments from "../Pages/Dashboard/MyAppointments/MyAppointments";
 import ChatResponse from "../Pages/Dashboard/ChatResponse/ChatResponse";
-import MessageBox from "../Pages/Dashboard/ChatResponse/MessageBox/MessageBox";
 import DoctorProfile from "../Pages/DoctorProfile/DoctorProfile";
 
 
@@ -137,14 +136,7 @@ const router = createBrowserRouter([
         // Chat Response Nested Routes
         {
           path: '/dashboard/chat-response',
-          element: <PrivateRoute> <ChatResponse></ChatResponse> </PrivateRoute>,
-          children: [
-              {
-                path: '/dashboard/chat-response/message-box/:id',
-                element: <MessageBox></MessageBox>,
-                loader: async ({params}) => await `https://rsh-network-server.vercel.app/chat-response/${params.id}`
-              }
-          ]
+          element: <PrivateRoute> <ChatResponse></ChatResponse> </PrivateRoute>
         },
 
       ]
