@@ -1,2 +1,2 @@
-# rsh-network-client
-a complete hospital management system
+## RSH Hospital Management
+### Features
