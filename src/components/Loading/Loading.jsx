@@ -4,7 +4,6 @@ import './Loading.css'
 const Loading = () => {
     return (
         <div className='loading-icon'> 
-
         <Dna
         visible={true}
         height="80"

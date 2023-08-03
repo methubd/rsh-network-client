@@ -12,7 +12,6 @@ const SignIn = () => {
     const location = useLocation();
 
     const from = location.state?.from?.pathname || "/";
-    console.log(from);
 
     const handleSignIn = event => {
         event.preventDefault();
